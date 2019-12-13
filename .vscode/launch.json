@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "ts node server",
+    "type": "node",
+    "request": "launch",
+    "runtimeArgs": [
+      "-r",
+      "ts-node/register"
+    ],
+    "sourceMaps": true,
+    "args": [
+      "-r",
+      "tsconfig-paths/register",
+      "${relativeFile}"
+    ],
+    "env": {
+      "TS_NODE_FILES": "true",
+      "TS_NODE_PROJECT": "${workspaceRoot}/tsconfig.json"
+    },
+    "cwd": "${workspaceRoot}",
+    "protocol": "inspector"
+  }]
+}

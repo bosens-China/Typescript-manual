@@ -6,7 +6,8 @@
     "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true,
-    "lib": ["ES2015"]
+    "lib": ["ES2015", "DOM"],
+    "baseUrl": "."
   },
-  "include": ["src/**/*"]
+ "exclude": ["node_modules"]
 }
