@@ -29,7 +29,7 @@ module.exports = {
     ["meta", { name: "author", content: "boses" }],
     ["link", { rel: "shortcut icon", content: "./favicon.png" }]
   ],
-  base: process.env.NODE_ENV === "production" ? "./dist/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/Typescript-manual/" : "/",
   dest: path.resolve(process.cwd(), "dist"),
   themeConfig: {
     lastUpdated: "最后更新时间",
@@ -37,7 +37,7 @@ module.exports = {
     prevLinks: true,
     smoothScroll: true,
     nav: [
-      { text: "进入目录", link: '/Typescript-manual/' },
+      { text: "进入目录", link: '/describe/' },
       {
         text: "友情链接",
         ariaLabel: "友情链接菜单",
