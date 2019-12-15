@@ -31,7 +31,7 @@ module.exports = {
     ["link", { rel: "icon", href: `/favicon.png` }]
   ],
   // base: process.env.NODE_ENV === "production" ? "/dist/" : "/",
-  base: process.env.NODE_ENV === "production" ? "/Typescript-manual/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/Typescript-manual/dist/" : "/",
   dest: path.resolve(process.cwd(), "dist"),
   themeConfig: {
     lastUpdated: "最后更新时间",
