@@ -3,6 +3,7 @@
 ![demo](/public/imgage\hean.png)
 
 创建这个项目的原因是因为官方维护的手册暂时出现问题不能访问，还有就是风格和字体的大小看起来十分不美观，所以就用`vuepress`重新打包了相关的 md 文件
+
 [手册地址](https://bosens-china.github.io/Typescript-manual/dist)
 
 ## 目录
