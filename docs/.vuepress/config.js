@@ -6,7 +6,8 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.(png|jp?g|gif|svg)$/i,
+          // 只处理大写，原图片有loader处理
+          test: /\.(PNG|JP?G|FIG|SVG)$/,
           exclude: /node_modules/,
           use: [
             {
