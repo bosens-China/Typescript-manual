@@ -2,7 +2,7 @@
 node_modules
 /dist
 /output
-
+backups
 # local env files
 .env.local
 .env.*.local

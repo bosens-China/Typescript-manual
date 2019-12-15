@@ -1,6 +1,27 @@
 {
   "version": "0.2.0",
-  "configurations": [{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${file}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug VuePress",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+          "run-script",
+          "debug"
+      ],
+      "port": 9229
+  },
+  {
     "name": "ts node server",
     "type": "node",
     "request": "launch",

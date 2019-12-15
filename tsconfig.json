@@ -6,8 +6,9 @@
     "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true,
-    "lib": ["ES2015", "DOM"],
-    "baseUrl": "."
+    "lib": ["ES2020", "DOM"],
+    "baseUrl": ".",
+    "downlevelIteration": true
   },
- "exclude": ["node_modules"]
+  "exclude": ["node_modules"]
 }

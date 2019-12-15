@@ -1,18 +1,14 @@
 import rp from "request-promise";
-import {
-  awaitWrap,
-  getFile,
-  setFile,
-  setDir,
-  removeDir
-} from "./utils";
-import markdown from "markdown-it";
+import config from "./config";
+import { getFile } from "./utils";
+import Markdown from "markdown-it";
 import path from "path";
 import unzip from "node-unzip-2";
 import glob from "glob";
 
 import fs from "fs";
-import { dirTree } from "./type";
+import fse from "fs-extra";
+import { IdirTree } from "./type";
 
 // 下载文件
 function download(href: string, route: string) {
@@ -57,21 +53,22 @@ function getDirFile(dir: string): Promise<string[]> {
 function getMk(str: string) {
   // 解析的层级
   const level = 3;
-  const md = new markdown();
+  const md = new Markdown();
   const ast = md.parse(str, {});
-  const arr: dirTree[] = [];
-  for (let i = 0; i < ast.length; i++) {
-    const child = ast[i];
-    // 如果是h1之类的标签跳过
-    if (/h\d/.test(child.tag)) {
-      continue;
-    }
+  const arr: IdirTree[] = [];
+  for (const child of ast) {
     // 如果是标题
-    if (child.content && child.level == level) {
+    if (child.content && child.level === level) {
       // [快速上手](./doc/handbook/t
+      const z = child.content.match(/\[(.+)?\]\((.+?)?\)/);
+      if (!z) {
+        continue;
+      }
+      const [, title] = z;
       arr.push({
-        name: child.content.match(/\[(.+)?\]/)[1],
-        child: []
+        title,
+        children: [],
+        ...config.sidebarConfig,
       });
     } else if (
       child.type === "inline" &&
@@ -83,57 +80,62 @@ function getMk(str: string) {
       if (!z) {
         continue;
       }
-      const [, name, href] = z;
+      const [, title, path] = z;
       // 找到最近的上一级插入
       const par = arr[arr.length - 1];
-      par.child.push({
-        name,
-        href
+      par.children.push({
+        title,
+        path
       });
     }
   }
+
   return arr;
 }
+function getName(str: string): string {
+  return str.split(/\/|\\/).pop();
+}
 // 将路径替换掉
-async function setPath(str: string, dir: Array<dirTree>) {
+async function setPath(str: string, dir: Array<IdirTree>, root: string) {
   // 读取目录下所有的文件
   const arr = await getDirFile(str);
-  const replace = function(d: dirTree[]) {
-    if (!Array.isArray(d)) {
-      return;
+  // 这里没有采用递归，因为是定制的目录就两层
+  dir.forEach(f => {
+    if (Array.isArray(f.children)) {
+      f.children.forEach(item => {
+        const fileName = getName(item.path);
+        // root路径 - name
+        const name = arr.find(f => f.includes(fileName));
+        item.path = name.slice(root.length);
+        return item;
+      });
     }
-    d.forEach(item => {
-      if (Array.isArray(item.child)) {
-        replace(item.child);
-      } else {
-        const fileName = item.href.split("/").pop();
-        const href = arr.find(f => f.includes(fileName));
-        item.href = href;
-      }
-    });
-  };
-  replace(dir);
+  });
 }
 
 (async () => {
-  const catalog = path.resolve(__dirname, "../output");
-  // 删除一次目录
-  await awaitWrap(removeDir(catalog));
-  const route = path.join(catalog, "master.zip");
+  // 写入docs的文件路径
+  await fse.remove(config.docsPath);
   // 创建目录
-  await setDir(catalog);
-  await download(
-    "https://github.com/zhongsp/TypeScript/archive/master.zip",
-    route
-  );
-  await decompression(route, { path: "output" });
-  const [SUMMARY] = (await getDirFile(`${catalog}/**/SUMMARY.md`)) as string[];
+  await fse.ensureDir(config.dirZip);
+  // 下载文件
+  await download(config.downPath, config.dirZipPath);
+  // 解压文件
+  await decompression(config.dirZipPath, { path: config.docsPath });
+  // 读取目录文件
+  const [SUMMARY] = (await getDirFile(
+    `${config.docsPath}/**/SUMMARY.md`
+  )) as string[];
+  const root = path.resolve(config.docsPath, "../");
   const content = await getFile(SUMMARY);
-  // 写到文件，主要为了方便对比
-  await setFile(path.resolve(__dirname, "../dir.md"), content);
-  const arr = getMk(content);
-  await setPath(`${catalog}/**/*.md`, arr);
-  // 写成json的格式
-  await setFile(path.resolve(__dirname, "../config.json"), JSON.stringify(arr));
-  // 完成后删除整个目录
+  // 写到文件，主要为了之后文件对比
+  await fse.outputFile(path.resolve(__dirname, "../dir.md"), content);
+  // 解析SUMMARY文件
+  const sidebar = getMk(content);
+  // 替换成 VuePress需要的路径
+  await setPath(`${config.docsPath}/**/*.md`, sidebar, root);
+  const jsonDate = JSON.stringify(sidebar, null, 2);
+  fse.outputFile(path.resolve(__dirname, "../config.json"), jsonDate);
+  await fse.remove(config.dirZip);
+  console.warn(`下载目录完成`);
 })();

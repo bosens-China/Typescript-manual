@@ -1,11 +1,20 @@
 {
-  "name": "seed",
+  "name": "hello-typescript",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
     "@types/markdown-it": "^0.0.9",
     "@types/request-promise": "^4.1.45",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "@vuepress/plugin-active-header-links": "^1.2.0",
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-nprogress": "^1.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint-config-alloy": "^3.4.0",
+    "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "markdown-it": "^10.0.0",
     "node-unzip-2": "^0.2.8",
@@ -14,11 +23,16 @@
     "ts-node": "^8.5.4",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.3",
+    "url-loader": "^3.0.0",
     "vuepress": "^1.2.0"
   },
   "scripts": {
-    "climb": "ts-node src/index.ts",
+    "climb": "ts-node src/index.ts --project tsconfig.json",
     "dev": "vuepress dev docs",
+    "updata": "deploy.sh",
     "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "eslint": "^6.7.2"
   }
 }

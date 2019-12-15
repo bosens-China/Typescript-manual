@@ -1,8 +1,11 @@
 // 定义一些类型
-interface dirTree {
-  name: string;
-  href?: string;
-  child?: Array<dirTree>;
+interface IdirTree {
+  title: string,
+  path?: string,
+  children?: Array<IdirTree>,
+  [k: string]: any;
 }
 
-export { dirTree };
+
+// eslint-disable-next-line no-undef
+export { IdirTree }
