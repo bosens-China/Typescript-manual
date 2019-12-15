@@ -93,7 +93,8 @@ function getMk(str: string) {
   return arr;
 }
 function getName(str: string): string {
-  return str.split(/\/|\\/).pop();
+  // 这里要调整成获取后两层，结构目前是固定的后续会更改
+  return str.split(/\/|\\/).slice(-2).join('/');
 }
 // 将路径替换掉
 async function setPath(str: string, dir: Array<IdirTree>, root: string) {

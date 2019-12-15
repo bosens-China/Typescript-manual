@@ -40,8 +40,7 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "手册",
@@ -144,8 +143,7 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "如何书写声明文件",
@@ -176,8 +174,7 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "工程配置",
@@ -216,8 +213,7 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "Wiki",
@@ -252,23 +248,22 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "新增功能",
     "children": [
       {
         "title": "TypeScript 3.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.6.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.6.md"
       },
       {
         "title": "TypeScript 3.5",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.5.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.5.md"
       },
       {
         "title": "TypeScript 3.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.4.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.4.md"
       },
       {
         "title": "TypeScript 3.3",
@@ -276,31 +271,31 @@
       },
       {
         "title": "TypeScript 3.2",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.2.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.2.md"
       },
       {
         "title": "TypeScript 3.1",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.1.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.1.md"
       },
       {
         "title": "TypeScript 3.0",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.0.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.0.md"
       },
       {
         "title": "TypeScript 2.9",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.9.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.9.md"
       },
       {
         "title": "TypeScript 2.8",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.8.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.8.md"
       },
       {
         "title": "TypeScript 2.7",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.7.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.7.md"
       },
       {
         "title": "TypeScript 2.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.6.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.6.md"
       },
       {
         "title": "TypeScript 2.5",
@@ -308,43 +303,43 @@
       },
       {
         "title": "TypeScript 2.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.4.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.4.md"
       },
       {
         "title": "TypeScript 2.3",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.3.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.3.md"
       },
       {
         "title": "TypeScript 2.2",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.2.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.2.md"
       },
       {
         "title": "TypeScript 2.1",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.1.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.1.md"
       },
       {
         "title": "TypeScript 2.0",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.0.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.0.md"
       },
       {
         "title": "TypeScript 1.8",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.8.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.8.md"
       },
       {
         "title": "TypeScript 1.7",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.7.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.7.md"
       },
       {
         "title": "TypeScript 1.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.6.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.6.md"
       },
       {
         "title": "TypeScript 1.5",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.5.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.5.md"
       },
       {
         "title": "TypeScript 1.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.4.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.4.md"
       },
       {
         "title": "TypeScript 1.3",
@@ -352,12 +347,11 @@
       },
       {
         "title": "TypeScript 1.1",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.1.md"
+        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.1.md"
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   },
   {
     "title": "Breaking Changes",
@@ -444,7 +438,6 @@
       }
     ],
     "collapsable": false,
-    "sidebarDepth": 1,
-    "path": "/describe/"
+    "sidebarDepth": 1
   }
 ]
