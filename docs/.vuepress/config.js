@@ -1,4 +1,5 @@
 const path = require("path");
+const moment = require("moment");
 const sidebar = require(path.resolve(process.cwd(), "config.json"));
 module.exports = {
   configureWebpack: {
@@ -27,8 +28,9 @@ module.exports = {
   head: [
     ["meta", { name: "keywords", content: "typescript,中文,手册,文档" }],
     ["meta", { name: "author", content: "boses" }],
-    ["link", { rel: "shortcut icon", content: "./favicon.png" }]
+    ["link", { rel: "icon", href: `/favicon.png` }]
   ],
+  // base: process.env.NODE_ENV === "production" ? "/dist/" : "/",
   base: process.env.NODE_ENV === "production" ? "/Typescript-manual/" : "/",
   dest: path.resolve(process.cwd(), "dist"),
   themeConfig: {
@@ -37,7 +39,7 @@ module.exports = {
     prevLinks: true,
     smoothScroll: true,
     nav: [
-      { text: "进入目录", link: '/describe/' },
+      { text: "进入目录", link: "/describe/" },
       {
         text: "友情链接",
         ariaLabel: "友情链接菜单",
@@ -68,5 +70,18 @@ module.exports = {
     ],
     sidebar: ["/describe/", ...sidebar]
   },
-  plugins: ['@vuepress/active-header-links', '@vuepress/back-to-top', '@vuepress/last-updated', '@vuepress/nprogress'],
+  plugins: [
+    "@vuepress/active-header-links",
+    "@vuepress/back-to-top",
+    [
+      "@vuepress/last-updated",
+      {
+        transformer: (timestamp, lang) => {
+          // moment.locale(lang);
+          return moment(timestamp).format("YYYY-MM-DD HH:mm:ss");
+        }
+      }
+    ],
+    "@vuepress/nprogress"
+  ]
 };

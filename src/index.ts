@@ -128,7 +128,7 @@ async function setPath(str: string, dir: Array<IdirTree>, root: string) {
   )) as string[];
   const root = path.resolve(config.docsPath, "../");
   const content = await getFile(SUMMARY);
-  // 写到文件，主要为了之后文件对比
+  // 写到文件，主要为了之后文件对比，这里暂时还没对比
   await fse.outputFile(path.resolve(__dirname, "../dir.md"), content);
   // 解析SUMMARY文件
   const sidebar = getMk(content);

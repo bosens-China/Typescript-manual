@@ -13,10 +13,12 @@
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-nprogress": "^1.2.0",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
     "eslint-config-alloy": "^3.4.0",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "markdown-it": "^10.0.0",
+    "moment": "^2.24.0",
     "node-unzip-2": "^0.2.8",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
@@ -30,7 +32,7 @@
     "climb": "ts-node src/index.ts --project tsconfig.json",
     "dev": "vuepress dev docs",
     "updata": "deploy.sh",
-    "build": "vuepress build docs"
+    "build": "cross-env NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
     "eslint": "^6.7.2"

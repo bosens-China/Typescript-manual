@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /output
-backups
+!backups/*.md
 # local env files
 .env.local
 .env.*.local
