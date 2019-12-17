@@ -8,7 +8,9 @@
     "esModuleInterop": true,
     "lib": ["ES2020", "DOM"],
     "baseUrl": ".",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "typeRoots" : ["./node_modules/@types", "./typings"]
+    
   },
   "exclude": ["node_modules"]
 }

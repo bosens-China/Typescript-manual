@@ -5,12 +5,12 @@ function awaitWrap<T, U = any>(
 ): Promise<[U | null, T | null]> {
   return promise
     .then<[null, T]>((data: T) => [null, data])
-    .catch<[U, null]>(err => [err, null]);
+    .catch<[U, null]>(err => [err, undefined]);
 }
 // 读取文件
-function getFile(path: string): Promise<string> {
+function getFile(path: string, code = "utf8"): Promise<string> {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, "utf8", (err, data) => {
+    fs.readFile(path, code, (err, data) => {
       if (err) {
         return reject(err);
       }

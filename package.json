@@ -13,6 +13,7 @@
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-nprogress": "^1.2.0",
     "@vuepress/plugin-pwa": "^1.2.0",
+    "@vuepress/plugin-search": "^1.2.0",
     "babel-eslint": "^10.0.3",
     "cross-env": "^6.0.3",
     "eslint-config-alloy": "^3.4.0",
@@ -27,15 +28,20 @@
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.3",
     "url-loader": "^3.0.0",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-baidu-autopush": "^1.0.1"
   },
   "scripts": {
-    "climb": "ts-node src/index.ts --project tsconfig.json",
+    "climb": "ts-node  --project tsconfig.json src/index.ts",
     "dev": "vuepress dev docs",
     "updata": "deploy.sh",
     "build": "cross-env NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "eslint": "^6.7.2"
+    "diacritics": "^1.3.0",
+    "eslint": "^6.7.2",
+    "md5": "^2.2.1",
+    "vuepress-plugin-pangu": "^1.0.1",
+    "vuepress-plugin-reading-progress": "^1.0.8"
   }
 }

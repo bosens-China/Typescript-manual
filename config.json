@@ -1,443 +1,446 @@
-[
-  {
-    "title": "快速上手",
-    "children": [
-      {
-        "title": "5分钟了解TypeScript",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/TypeScript in 5 minutes.md"
-      },
-      {
-        "title": "ASP.NET Core",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/ASP.NET Core.md"
-      },
-      {
-        "title": "ASP.NET 4",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/ASP.NET 4.md"
-      },
-      {
-        "title": "Gulp",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/Gulp.md"
-      },
-      {
-        "title": "Knockout.js",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/Knockout.md"
-      },
-      {
-        "title": "React与webpack",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/React & Webpack.md"
-      },
-      {
-        "title": "React",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/React.md"
-      },
-      {
-        "title": "Angular 2",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/Angular 2.md"
-      },
-      {
-        "title": "从JavaScript迁移到TypeScript",
-        "path": "/backups/TypeScript-master/doc/handbook/tutorials/Migrating from JavaScript.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "手册",
-    "children": [
-      {
-        "title": "基础类型",
-        "path": "/backups/TypeScript-master/doc/handbook/Basic Types.md"
-      },
-      {
-        "title": "变量声明",
-        "path": "/backups/TypeScript-master/doc/handbook/Variable Declarations.md"
-      },
-      {
-        "title": "接口",
-        "path": "/backups/TypeScript-master/doc/handbook/Interfaces.md"
-      },
-      {
-        "title": "类",
-        "path": "/backups/TypeScript-master/doc/handbook/Classes.md"
-      },
-      {
-        "title": "函数",
-        "path": "/backups/TypeScript-master/doc/handbook/Functions.md"
-      },
-      {
-        "title": "泛型",
-        "path": "/backups/TypeScript-master/doc/handbook/Generics.md"
-      },
-      {
-        "title": "枚举",
-        "path": "/backups/TypeScript-master/doc/handbook/Enums.md"
-      },
-      {
-        "title": "类型推论",
-        "path": "/backups/TypeScript-master/doc/handbook/Type Inference.md"
-      },
-      {
-        "title": "类型兼容性",
-        "path": "/backups/TypeScript-master/doc/handbook/Type Compatibility.md"
-      },
-      {
-        "title": "高级类型",
-        "path": "/backups/TypeScript-master/doc/handbook/Advanced Types.md"
-      },
-      {
-        "title": "实用工具类型",
-        "path": "/backups/TypeScript-master/doc/handbook/Utility Types.md"
-      },
-      {
-        "title": "Symbols",
-        "path": "/backups/TypeScript-master/doc/handbook/Symbols.md"
-      },
-      {
-        "title": "Iterators 和 Generators",
-        "path": "/backups/TypeScript-master/doc/handbook/Iterators and Generators.md"
-      },
-      {
-        "title": "模块",
-        "path": "/backups/TypeScript-master/doc/handbook/Modules.md"
-      },
-      {
-        "title": "命名空间",
-        "path": "/backups/TypeScript-master/doc/handbook/Namespaces.md"
-      },
-      {
-        "title": "命名空间和模块",
-        "path": "/backups/TypeScript-master/doc/handbook/Namespaces and Modules.md"
-      },
-      {
-        "title": "模块解析",
-        "path": "/backups/TypeScript-master/doc/handbook/Module Resolution.md"
-      },
-      {
-        "title": "声明合并",
-        "path": "/backups/TypeScript-master/doc/handbook/Declaration Merging.md"
-      },
-      {
-        "title": "书写.d.ts文件",
-        "path": "/backups/TypeScript-master/doc/handbook/Writing Definition Files.md"
-      },
-      {
-        "title": "JSX",
-        "path": "/backups/TypeScript-master/doc/handbook/JSX.md"
-      },
-      {
-        "title": "Decorators",
-        "path": "/backups/TypeScript-master/doc/handbook/Decorators.md"
-      },
-      {
-        "title": "混入",
-        "path": "/backups/TypeScript-master/doc/handbook/Mixins.md"
-      },
-      {
-        "title": "三斜线指令",
-        "path": "/backups/TypeScript-master/doc/handbook/Triple-Slash Directives.md"
-      },
-      {
-        "title": "JavaScript文件里的类型检查",
-        "path": "/backups/TypeScript-master/doc/handbook/Type Checking JavaScript Files.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "如何书写声明文件",
-    "children": [
-      {
-        "title": "结构",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/Library Structures.md"
-      },
-      {
-        "title": "规范",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/Do's and Don'ts.md"
-      },
-      {
-        "title": "举例",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/By Example.md"
-      },
-      {
-        "title": "深入",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/Deep Dive.md"
-      },
-      {
-        "title": "发布",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/Publishing.md"
-      },
-      {
-        "title": "使用",
-        "path": "/backups/TypeScript-master/doc/handbook/declaration files/Consumption.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "工程配置",
-    "children": [
-      {
-        "title": "tsconfig.json",
-        "path": "/backups/TypeScript-master/doc/handbook/tsconfig.json.md"
-      },
-      {
-        "title": "工程引用",
-        "path": "/backups/TypeScript-master/doc/handbook/Project References.md"
-      },
-      {
-        "title": "NPM包的类型",
-        "path": "/backups/TypeScript-master/doc/handbook/Typings for NPM Packages.md"
-      },
-      {
-        "title": "编译选项",
-        "path": "/backups/TypeScript-master/doc/handbook/Compiler Options.md"
-      },
-      {
-        "title": "配置 Watch",
-        "path": "/backups/TypeScript-master/doc/handbook/Configuring Watch.md"
-      },
-      {
-        "title": "在MSBuild里使用编译选项",
-        "path": "/backups/TypeScript-master/doc/handbook/Compiler Options in MSBuild.md"
-      },
-      {
-        "title": "与其它构建工具整合",
-        "path": "/backups/TypeScript-master/doc/handbook/Integrating with Build Tools.md"
-      },
-      {
-        "title": "使用TypeScript的每日构建版本",
-        "path": "/backups/TypeScript-master/doc/handbook/Nightly Builds.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "Wiki",
-    "children": [
-      {
-        "title": "TypeScript里的this",
-        "path": "/backups/TypeScript-master/doc/wiki/this-in-TypeScript.md"
-      },
-      {
-        "title": "编码规范",
-        "path": "/backups/TypeScript-master/doc/wiki/coding_guidelines.md"
-      },
-      {
-        "title": "常见编译错误",
-        "path": "/backups/TypeScript-master/doc/wiki/Common Errors.md"
-      },
-      {
-        "title": "支持TypeScript的编辑器",
-        "path": "/backups/TypeScript-master/doc/wiki/TypeScript-Editor-Support.md"
-      },
-      {
-        "title": "结合ASP.NET v5使用TypeScript",
-        "path": "/backups/TypeScript-master/doc/wiki/Using-TypeScript-With-ASP.NET-5.md"
-      },
-      {
-        "title": "架构概述",
-        "path": "/backups/TypeScript-master/doc/wiki/Architectural-Overview.md"
-      },
-      {
-        "title": "发展路线图",
-        "path": "/backups/TypeScript-master/doc/wiki/Roadmap.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "新增功能",
-    "children": [
-      {
-        "title": "TypeScript 3.6",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.6.md"
-      },
-      {
-        "title": "TypeScript 3.5",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.5.md"
-      },
-      {
-        "title": "TypeScript 3.4",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.4.md"
-      },
-      {
-        "title": "TypeScript 3.3",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.3.md"
-      },
-      {
-        "title": "TypeScript 3.2",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.2.md"
-      },
-      {
-        "title": "TypeScript 3.1",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.1.md"
-      },
-      {
-        "title": "TypeScript 3.0",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.0.md"
-      },
-      {
-        "title": "TypeScript 2.9",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.9.md"
-      },
-      {
-        "title": "TypeScript 2.8",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.8.md"
-      },
-      {
-        "title": "TypeScript 2.7",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.7.md"
-      },
-      {
-        "title": "TypeScript 2.6",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.6.md"
-      },
-      {
-        "title": "TypeScript 2.5",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.5.md"
-      },
-      {
-        "title": "TypeScript 2.4",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.4.md"
-      },
-      {
-        "title": "TypeScript 2.3",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.3.md"
-      },
-      {
-        "title": "TypeScript 2.2",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.2.md"
-      },
-      {
-        "title": "TypeScript 2.1",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.1.md"
-      },
-      {
-        "title": "TypeScript 2.0",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.0.md"
-      },
-      {
-        "title": "TypeScript 1.8",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.8.md"
-      },
-      {
-        "title": "TypeScript 1.7",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.7.md"
-      },
-      {
-        "title": "TypeScript 1.6",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.6.md"
-      },
-      {
-        "title": "TypeScript 1.5",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.5.md"
-      },
-      {
-        "title": "TypeScript 1.4",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.4.md"
-      },
-      {
-        "title": "TypeScript 1.3",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.3.md"
-      },
-      {
-        "title": "TypeScript 1.1",
-        "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.1.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  },
-  {
-    "title": "Breaking Changes",
-    "children": [
-      {
-        "title": "TypeScript 3.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.6.md"
-      },
-      {
-        "title": "TypeScript 3.5",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.5.md"
-      },
-      {
-        "title": "TypeScript 3.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.4.md"
-      },
-      {
-        "title": "TypeScript 3.2",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.2.md"
-      },
-      {
-        "title": "TypeScript 3.1",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.1.md"
-      },
-      {
-        "title": "TypeScript 3.0",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.0.md"
-      },
-      {
-        "title": "TypeScript 2.9",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.9.md"
-      },
-      {
-        "title": "TypeScript 2.8",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.8.md"
-      },
-      {
-        "title": "TypeScript 2.7",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.7.md"
-      },
-      {
-        "title": "TypeScript 2.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.6.md"
-      },
-      {
-        "title": "TypeScript 2.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.4.md"
-      },
-      {
-        "title": "TypeScript 2.3",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.3.md"
-      },
-      {
-        "title": "TypeScript 2.2",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.2.md"
-      },
-      {
-        "title": "TypeScript 2.1",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.1.md"
-      },
-      {
-        "title": "TypeScript 2.0",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.0.md"
-      },
-      {
-        "title": "TypeScript 1.8",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.8.md"
-      },
-      {
-        "title": "TypeScript 1.7",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.7.md"
-      },
-      {
-        "title": "TypeScript 1.6",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.6.md"
-      },
-      {
-        "title": "TypeScript 1.5",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.5.md"
-      },
-      {
-        "title": "TypeScript 1.4",
-        "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.4.md"
-      }
-    ],
-    "collapsable": false,
-    "sidebarDepth": 1
-  }
-]
+{
+  "md5": "c7cfef85960c7820a191a8850949f9bd",
+  "sidebar": [
+    {
+      "title": "快速上手",
+      "children": [
+        {
+          "title": "5分钟了解TypeScript",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/TypeScript in 5 minutes.md"
+        },
+        {
+          "title": "ASP.NET Core",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/ASP.NET Core.md"
+        },
+        {
+          "title": "ASP.NET 4",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/ASP.NET 4.md"
+        },
+        {
+          "title": "Gulp",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/Gulp.md"
+        },
+        {
+          "title": "Knockout.js",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/Knockout.md"
+        },
+        {
+          "title": "React与webpack",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/React & Webpack.md"
+        },
+        {
+          "title": "React",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/React.md"
+        },
+        {
+          "title": "Angular 2",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/Angular 2.md"
+        },
+        {
+          "title": "从JavaScript迁移到TypeScript",
+          "path": "/backups/TypeScript-master/doc/handbook/tutorials/Migrating from JavaScript.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "手册",
+      "children": [
+        {
+          "title": "基础类型",
+          "path": "/backups/TypeScript-master/doc/handbook/Basic Types.md"
+        },
+        {
+          "title": "变量声明",
+          "path": "/backups/TypeScript-master/doc/handbook/Variable Declarations.md"
+        },
+        {
+          "title": "接口",
+          "path": "/backups/TypeScript-master/doc/handbook/Interfaces.md"
+        },
+        {
+          "title": "类",
+          "path": "/backups/TypeScript-master/doc/handbook/Classes.md"
+        },
+        {
+          "title": "函数",
+          "path": "/backups/TypeScript-master/doc/handbook/Functions.md"
+        },
+        {
+          "title": "泛型",
+          "path": "/backups/TypeScript-master/doc/handbook/Generics.md"
+        },
+        {
+          "title": "枚举",
+          "path": "/backups/TypeScript-master/doc/handbook/Enums.md"
+        },
+        {
+          "title": "类型推论",
+          "path": "/backups/TypeScript-master/doc/handbook/Type Inference.md"
+        },
+        {
+          "title": "类型兼容性",
+          "path": "/backups/TypeScript-master/doc/handbook/Type Compatibility.md"
+        },
+        {
+          "title": "高级类型",
+          "path": "/backups/TypeScript-master/doc/handbook/Advanced Types.md"
+        },
+        {
+          "title": "实用工具类型",
+          "path": "/backups/TypeScript-master/doc/handbook/Utility Types.md"
+        },
+        {
+          "title": "Symbols",
+          "path": "/backups/TypeScript-master/doc/handbook/Symbols.md"
+        },
+        {
+          "title": "Iterators 和 Generators",
+          "path": "/backups/TypeScript-master/doc/handbook/Iterators and Generators.md"
+        },
+        {
+          "title": "模块",
+          "path": "/backups/TypeScript-master/doc/handbook/Modules.md"
+        },
+        {
+          "title": "命名空间",
+          "path": "/backups/TypeScript-master/doc/handbook/Namespaces.md"
+        },
+        {
+          "title": "命名空间和模块",
+          "path": "/backups/TypeScript-master/doc/handbook/Namespaces and Modules.md"
+        },
+        {
+          "title": "模块解析",
+          "path": "/backups/TypeScript-master/doc/handbook/Module Resolution.md"
+        },
+        {
+          "title": "声明合并",
+          "path": "/backups/TypeScript-master/doc/handbook/Declaration Merging.md"
+        },
+        {
+          "title": "书写.d.ts文件",
+          "path": "/backups/TypeScript-master/doc/handbook/Writing Definition Files.md"
+        },
+        {
+          "title": "JSX",
+          "path": "/backups/TypeScript-master/doc/handbook/JSX.md"
+        },
+        {
+          "title": "Decorators",
+          "path": "/backups/TypeScript-master/doc/handbook/Decorators.md"
+        },
+        {
+          "title": "混入",
+          "path": "/backups/TypeScript-master/doc/handbook/Mixins.md"
+        },
+        {
+          "title": "三斜线指令",
+          "path": "/backups/TypeScript-master/doc/handbook/Triple-Slash Directives.md"
+        },
+        {
+          "title": "JavaScript文件里的类型检查",
+          "path": "/backups/TypeScript-master/doc/handbook/Type Checking JavaScript Files.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "如何书写声明文件",
+      "children": [
+        {
+          "title": "结构",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/Library Structures.md"
+        },
+        {
+          "title": "规范",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/Do's and Don'ts.md"
+        },
+        {
+          "title": "举例",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/By Example.md"
+        },
+        {
+          "title": "深入",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/Deep Dive.md"
+        },
+        {
+          "title": "发布",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/Publishing.md"
+        },
+        {
+          "title": "使用",
+          "path": "/backups/TypeScript-master/doc/handbook/declaration files/Consumption.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "工程配置",
+      "children": [
+        {
+          "title": "tsconfig.json",
+          "path": "/backups/TypeScript-master/doc/handbook/tsconfig.json.md"
+        },
+        {
+          "title": "工程引用",
+          "path": "/backups/TypeScript-master/doc/handbook/Project References.md"
+        },
+        {
+          "title": "NPM包的类型",
+          "path": "/backups/TypeScript-master/doc/handbook/Typings for NPM Packages.md"
+        },
+        {
+          "title": "编译选项",
+          "path": "/backups/TypeScript-master/doc/handbook/Compiler Options.md"
+        },
+        {
+          "title": "配置 Watch",
+          "path": "/backups/TypeScript-master/doc/handbook/Configuring Watch.md"
+        },
+        {
+          "title": "在MSBuild里使用编译选项",
+          "path": "/backups/TypeScript-master/doc/handbook/Compiler Options in MSBuild.md"
+        },
+        {
+          "title": "与其它构建工具整合",
+          "path": "/backups/TypeScript-master/doc/handbook/Integrating with Build Tools.md"
+        },
+        {
+          "title": "使用TypeScript的每日构建版本",
+          "path": "/backups/TypeScript-master/doc/handbook/Nightly Builds.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "Wiki",
+      "children": [
+        {
+          "title": "TypeScript里的this",
+          "path": "/backups/TypeScript-master/doc/wiki/this-in-TypeScript.md"
+        },
+        {
+          "title": "编码规范",
+          "path": "/backups/TypeScript-master/doc/wiki/coding_guidelines.md"
+        },
+        {
+          "title": "常见编译错误",
+          "path": "/backups/TypeScript-master/doc/wiki/Common Errors.md"
+        },
+        {
+          "title": "支持TypeScript的编辑器",
+          "path": "/backups/TypeScript-master/doc/wiki/TypeScript-Editor-Support.md"
+        },
+        {
+          "title": "结合ASP.NET v5使用TypeScript",
+          "path": "/backups/TypeScript-master/doc/wiki/Using-TypeScript-With-ASP.NET-5.md"
+        },
+        {
+          "title": "架构概述",
+          "path": "/backups/TypeScript-master/doc/wiki/Architectural-Overview.md"
+        },
+        {
+          "title": "发展路线图",
+          "path": "/backups/TypeScript-master/doc/wiki/Roadmap.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "新增功能",
+      "children": [
+        {
+          "title": "TypeScript 3.6",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.6.md"
+        },
+        {
+          "title": "TypeScript 3.5",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.5.md"
+        },
+        {
+          "title": "TypeScript 3.4",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.4.md"
+        },
+        {
+          "title": "TypeScript 3.3",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.3.md"
+        },
+        {
+          "title": "TypeScript 3.2",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.2.md"
+        },
+        {
+          "title": "TypeScript 3.1",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.1.md"
+        },
+        {
+          "title": "TypeScript 3.0",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 3.0.md"
+        },
+        {
+          "title": "TypeScript 2.9",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.9.md"
+        },
+        {
+          "title": "TypeScript 2.8",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.8.md"
+        },
+        {
+          "title": "TypeScript 2.7",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.7.md"
+        },
+        {
+          "title": "TypeScript 2.6",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.6.md"
+        },
+        {
+          "title": "TypeScript 2.5",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.5.md"
+        },
+        {
+          "title": "TypeScript 2.4",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.4.md"
+        },
+        {
+          "title": "TypeScript 2.3",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.3.md"
+        },
+        {
+          "title": "TypeScript 2.2",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.2.md"
+        },
+        {
+          "title": "TypeScript 2.1",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.1.md"
+        },
+        {
+          "title": "TypeScript 2.0",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 2.0.md"
+        },
+        {
+          "title": "TypeScript 1.8",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.8.md"
+        },
+        {
+          "title": "TypeScript 1.7",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.7.md"
+        },
+        {
+          "title": "TypeScript 1.6",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.6.md"
+        },
+        {
+          "title": "TypeScript 1.5",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.5.md"
+        },
+        {
+          "title": "TypeScript 1.4",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.4.md"
+        },
+        {
+          "title": "TypeScript 1.3",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.3.md"
+        },
+        {
+          "title": "TypeScript 1.1",
+          "path": "/backups/TypeScript-master/doc/release-notes/TypeScript 1.1.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    },
+    {
+      "title": "Breaking Changes",
+      "children": [
+        {
+          "title": "TypeScript 3.6",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.6.md"
+        },
+        {
+          "title": "TypeScript 3.5",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.5.md"
+        },
+        {
+          "title": "TypeScript 3.4",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.4.md"
+        },
+        {
+          "title": "TypeScript 3.2",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.2.md"
+        },
+        {
+          "title": "TypeScript 3.1",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.1.md"
+        },
+        {
+          "title": "TypeScript 3.0",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 3.0.md"
+        },
+        {
+          "title": "TypeScript 2.9",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.9.md"
+        },
+        {
+          "title": "TypeScript 2.8",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.8.md"
+        },
+        {
+          "title": "TypeScript 2.7",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.7.md"
+        },
+        {
+          "title": "TypeScript 2.6",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.6.md"
+        },
+        {
+          "title": "TypeScript 2.4",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.4.md"
+        },
+        {
+          "title": "TypeScript 2.3",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.3.md"
+        },
+        {
+          "title": "TypeScript 2.2",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.2.md"
+        },
+        {
+          "title": "TypeScript 2.1",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.1.md"
+        },
+        {
+          "title": "TypeScript 2.0",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 2.0.md"
+        },
+        {
+          "title": "TypeScript 1.8",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.8.md"
+        },
+        {
+          "title": "TypeScript 1.7",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.7.md"
+        },
+        {
+          "title": "TypeScript 1.6",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.6.md"
+        },
+        {
+          "title": "TypeScript 1.5",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.5.md"
+        },
+        {
+          "title": "TypeScript 1.4",
+          "path": "/backups/TypeScript-master/doc/breaking-changes/TypeScript 1.4.md"
+        }
+      ],
+      "collapsable": false,
+      "sidebarDepth": 1
+    }
+  ]
+}

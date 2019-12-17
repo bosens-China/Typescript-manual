@@ -1,11 +1,12 @@
 import rp from "request-promise";
 import config from "./config";
-import { getFile } from "./utils";
+import { execSync as exec } from "child_process";
+import { getFile, awaitWrap } from "./utils";
 import Markdown from "markdown-it";
 import path from "path";
 import unzip from "node-unzip-2";
 import glob from "glob";
-
+import md5 from "md5";
 import fs from "fs";
 import fse from "fs-extra";
 import { IdirTree } from "./type";
@@ -129,14 +130,23 @@ async function setPath(str: string, dir: Array<IdirTree>, root: string) {
   )) as string[];
   const root = path.resolve(config.docsPath, "../");
   const content = await getFile(SUMMARY);
-  // 写到文件，主要为了之后文件对比，这里暂时还没对比
+  // 写到目录
   await fse.outputFile(path.resolve(__dirname, "../dir.md"), content);
   // 解析SUMMARY文件
   const sidebar = getMk(content);
   // 替换成 VuePress需要的路径
   await setPath(`${config.docsPath}/**/*.md`, sidebar, root);
-  const jsonDate = JSON.stringify(sidebar, null, 2);
-  fse.outputFile(path.resolve(__dirname, "../config.json"), jsonDate);
+  const [_err, { md5: lastMd5 } = ({} as any)] = await awaitWrap(fse.readJson(config.jsonPath, { throws: false }));
+  const zipData = await getFile(config.dirZipPath);
+  const newMd5 = md5(zipData)
+  // 判断一下是不是相同，相同直接退出
+  if (newMd5 === lastMd5) {
+    return;
+  }
+  const jsonDate = { md5: newMd5, sidebar };
+  await fse.remove(config.jsonPath);
+  await fse.outputFile(config.jsonPath, JSON.stringify(jsonDate, null, 2));
   await fse.remove(config.dirZip);
   console.warn(`下载目录完成`);
+  exec('npm run updata', { stdio: 'inherit' });
 })();
