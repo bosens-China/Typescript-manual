@@ -29,17 +29,17 @@ module.exports = {
     // 禁止自动翻译
     ["meta", { name: "google", content: "notranslate" }],
     ["link", { rel: "icon", href: `/favicon.png` }],
-    ["link", { rel: "manifest", href: "/manifest.json" }],
-    ["meta", { name: "theme-color", content: "#3eaf7c" }],
-    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
-    [
-      "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" }
-    ],
-    ["link", { rel: "apple-touch-icon", href: `/icons/128.png` }],
-    ["link", { rel: "mask-icon", href: "/favicon.png", color: "#3eaf7c" }],
-    ["meta", { name: "msapplication-TileImage", content: "/icons/144.png" }],
-    ["meta", { name: "msapplication-TileColor", content: "#000000" }]
+    // ["link", { rel: "manifest", href: "/manifest.json" }],
+    // ["meta", { name: "theme-color", content: "#3eaf7c" }],
+    // ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    // [
+    //   "meta",
+    //   { name: "apple-mobile-web-app-status-bar-style", content: "black" }
+    // ],
+    // ["link", { rel: "apple-touch-icon", href: `/icons/128.png` }],
+    // ["link", { rel: "mask-icon", href: "/favicon.png", color: "#3eaf7c" }],
+    // ["meta", { name: "msapplication-TileImage", content: "/icons/144.png" }],
+    // ["meta", { name: "msapplication-TileColor", content: "#000000" }]
   ],
   // base: process.env.NODE_ENV === "production" ? "/dist/" : "/",
   base:
@@ -120,13 +120,13 @@ module.exports = {
         }
       }
     ],
-    [
-      "@vuepress/pwa",
-      {
-        serviceWorker: true,
-        updatePopup: true
-      }
-    ],
+    // [
+    //   "@vuepress/pwa",
+    //   {
+    //     serviceWorker: true,
+    //     updatePopup: true
+    //   }
+    // ],
     "@vuepress/nprogress",
     // 百度站点推送
     "vuepress-plugin-baidu-autopush",
