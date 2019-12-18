@@ -1,6 +1,8 @@
 const path = require("path");
 const moment = require("moment");
-const {sidebar} = require(path.resolve(process.cwd(), "config.json"));
+const { sidebar } = require(path.resolve(process.cwd(), "config.json"));
+const copy = require("../Plugins/copy");
+
 module.exports = {
   configureWebpack: {
     module: {
@@ -28,7 +30,7 @@ module.exports = {
     ["meta", { name: "author", content: "boses" }],
     // 禁止自动翻译
     ["meta", { name: "google", content: "notranslate" }],
-    ["link", { rel: "icon", href: `/favicon.png` }],
+    ["link", { rel: "icon", href: `/favicon.png` }]
     // ["link", { rel: "manifest", href: "/manifest.json" }],
     // ["meta", { name: "theme-color", content: "#3eaf7c" }],
     // ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
@@ -131,6 +133,7 @@ module.exports = {
     // 百度站点推送
     "vuepress-plugin-baidu-autopush",
     "reading-progress",
-    "pangu"
+    "pangu",
+    [copy]
   ]
 };
