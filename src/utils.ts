@@ -1,5 +1,4 @@
 import fs from "fs";
-import path from "path";
 function awaitWrap<T, U = any>(
   promise: Promise<T>
 ): Promise<[U | null, T | null]> {
@@ -8,9 +7,9 @@ function awaitWrap<T, U = any>(
     .catch<[U, null]>(err => [err, undefined]);
 }
 // 读取文件
-function getFile(path: string, code = "utf8"): Promise<string> {
+function getFile(p: string, code = "utf8"): Promise<string> {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, code, (err, data) => {
+    fs.readFile(p, code, (err, data) => {
       if (err) {
         return reject(err);
       }

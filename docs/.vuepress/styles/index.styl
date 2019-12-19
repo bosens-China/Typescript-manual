@@ -1,3 +1,13 @@
 .home .hero .description {
   white-space: pre-wrap;
 }
+
+@media (min-width: 1800px) {
+  body {
+    .theme-default-content:not(.custom), .page-edit, .page-nav {
+      max-width: none;
+      margin: 0 auto;
+      padding: 2rem 15vw;
+    }
+  }
+}

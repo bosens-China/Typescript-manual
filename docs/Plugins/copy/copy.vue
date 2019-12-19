@@ -1,6 +1,10 @@
 <template>
   <span>
-    <span ref="btn" class="v-copy-code-btn" @click="copyClick">{{copyText}}</span>
+    <span
+      ref="btn"
+      class="v-copy-code-btn"
+      @click="copyClick"
+    >{{copyText}}</span>
   </span>
 </template>
 
@@ -8,10 +12,7 @@
 import clipboard from "./clipboard";
 export default {
   props: {
-    copyText: {
-      type: String,
-      default: "复制代码"
-    },
+    copyText: String,
     code: String
   },
   methods: {
@@ -23,6 +24,14 @@ export default {
           change(e, dom, this.$el);
         }
       };
+      if (visibleTip) {
+        this.$message({
+          time,
+          content,
+          title
+        });
+      }
+
       clipboard(this.code)
         .then(e => call)
         .catch(call);
@@ -36,6 +45,8 @@ div[class][class*="language-"]::before {
   right: 70px;
 }
 </style>
+
+
 <style scoped>
 .v-copy-code-btn {
   cursor: pointer;
@@ -46,7 +57,6 @@ div[class][class*="language-"]::before {
   top: 0.8em;
   right: 15px;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .v-copy-code-btn:hover {
