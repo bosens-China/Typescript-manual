@@ -14,7 +14,9 @@ module.exports = {
     content: true,
     title: true,
     change: true,
-    visibleTip: true
+    visibleTip: true,
+    openText: true,
+    retractText: true,
   },
   parserOptions: {
     ecmaVersion: 2018,

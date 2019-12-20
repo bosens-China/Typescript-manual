@@ -2079,6 +2079,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classlist-polyfill@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npm.taobao.org/classlist-polyfill/download/classlist-polyfill-1.2.0.tgz#935bc2dfd9458a876b279617514638bcaa964a2e"
+  integrity sha1-k1vC39lFiodrJ5YXUUY4vKqWSi4=
+
 clean-css@4.2.x:
   version "4.2.1"
   resolved "https://registry.npm.taobao.org/clean-css/download/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -4874,6 +4879,11 @@ lodash.templatesettings@^4.0.0:
   integrity sha1-5IExDwSdPPbUfpEq0JMTsVTw+zM=
   dependencies:
     lodash._reinterpolate "^3.0.0"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/lodash.throttle/download/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash.unescape@4.0.1:
   version "4.0.1"
@@ -8219,6 +8229,13 @@ vuepress-plugin-container@^2.0.2:
   integrity sha1-aIweWpcJobhlhgW8ruWAs6uxnRY=
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-nuggets-style-copy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-nuggets-style-copy/download/vuepress-plugin-nuggets-style-copy-1.0.0.tgz?cache=0&sync_timestamp=1576820384571&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuepress-plugin-nuggets-style-copy%2Fdownload%2Fvuepress-plugin-nuggets-style-copy-1.0.0.tgz#696431f7cdc541084700e62d1b559ee8a8adafc3"
+  integrity sha1-aWQx983FQQhHAOYtG1We6Kitr8M=
+  dependencies:
+    clipboard "^2.0.4"
 
 vuepress-plugin-pangu@^1.0.1:
   version "1.0.1"

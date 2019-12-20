@@ -39,11 +39,13 @@
     "climb": "ts-node  --project tsconfig.json src/index.ts",
     "dev": "vuepress dev docs",
     "updata": "deploy.sh",
-    "build": "cross-env NODE_ENV=production vuepress build docs"
+    "build": "cross-env NODE_ENV=production vuepress build docs -c"
   },
   "dependencies": {
+    "classlist-polyfill": "^1.2.0",
     "diacritics": "^1.3.0",
     "enquire.js": "^2.1.6",
+    "lodash.throttle": "^4.1.1",
     "md5": "^2.2.1",
     "vuepress-plugin-pangu": "^1.0.1",
     "vuepress-plugin-reading-progress": "^1.0.8"
