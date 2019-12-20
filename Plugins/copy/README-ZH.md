@@ -34,7 +34,7 @@ plugins: [
 
 #### selector
 
-选择器，默认为`div[class*="language-"]`
+选择器，默认为`div[class*="language-"] pre`
 
 #### copyText
 

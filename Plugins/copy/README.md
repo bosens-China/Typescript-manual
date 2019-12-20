@@ -30,7 +30,7 @@ plugins: [
 
 #### selector
 
-Selector, default to `div [class * = "language -"]`
+Selector, default to `div[class*="language-"] pre`
 
 #### copyText
 

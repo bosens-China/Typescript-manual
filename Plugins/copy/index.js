@@ -5,7 +5,7 @@ module.exports = (options = {}) => ({
   name: 'juejin-copy',
   define() {
     const {
-      selector = 'div[class*="language-"]',
+      selector = 'div[class*="language-"] pre',
       copyText = 'Copy code',
       tip: { time = 3000, content = 'copy success', title = 'Tips' } = {},
       change,

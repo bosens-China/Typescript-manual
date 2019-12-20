@@ -16,6 +16,7 @@ export default {
       const dom = Array.from(document.querySelectorAll(selector));
       dom.forEach((e) => {
         const el = e;
+        // const el = e.parentElement;
         // 判断一下，当前节点是不是已经插入了
         if (/v-copy/.test(el.className)) {
           return;
@@ -26,8 +27,8 @@ export default {
         copy.copyText = copyText;
         copy.code = el.textContent;
         copy.$mount();
-        el.className += ' v- copy';
-        el.appendChild(copy.$el);
+        el.className += ' v-copy';
+        el.parentElement.appendChild(copy.$el);
       });
     },
   },
