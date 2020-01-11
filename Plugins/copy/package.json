@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-nuggets-style-copy",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "keywords": [
@@ -10,7 +10,7 @@
     "code",
     "copy"
   ],
-  "repository": "https://github.com/bosens-China/Typescript-manual/tree/master/docs/Plugins/copy",
+  "repository": "https://github.com/bosens-China/Typescript-manual/tree/master/Plugins/copy",
   "author": "boses",
   "description": "Vuepress gold digging style copy code;vuePress掘金风格复制代码",
   "dependencies": {

@@ -8,6 +8,7 @@
     "@types/fs-extra": "^8.0.1",
     "@types/glob": "^7.1.1",
     "@types/markdown-it": "0.0.9",
+    "@types/nodemailer": "^6.4.0",
     "@types/request-promise": "^4.1.45",
     "@typescript-eslint/parser": "^2.12.0",
     "@vuepress/plugin-active-header-links": "^1.2.0",
@@ -38,7 +39,7 @@
   "scripts": {
     "climb": "ts-node  --project tsconfig.json src/index.ts",
     "dev": "vuepress dev docs",
-    "updata": "deploy.sh",
+    "updata": "bash deploy.sh",
     "build": "cross-env NODE_ENV=production vuepress build docs -c"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "enquire.js": "^2.1.6",
     "lodash.throttle": "^4.1.1",
     "md5": "^2.2.1",
+    "nodemailer": "^6.4.2",
     "vuepress-plugin-pangu": "^1.0.1",
     "vuepress-plugin-reading-progress": "^1.0.8"
   }

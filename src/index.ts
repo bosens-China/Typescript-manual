@@ -1,10 +1,10 @@
 import rp from "request-promise";
 import config from "./config";
-import { execSync as exec } from "child_process";
 import { getFile, awaitWrap } from "./utils";
 import Markdown from "markdown-it";
 import path from "path";
 import unzip from "node-unzip-2";
+import nodemailer from "nodemailer";
 import glob from "glob";
 import md5 from "md5";
 import fs from "fs";
@@ -114,6 +114,24 @@ async function setPath(str: string, dir: Array<IdirTree>, root: string) {
     }
   });
 }
+// 发送邮件
+function sendMail(e: any) {
+  const mailTransport = nodemailer.createTransport({
+    host: 'smtp.qq.com',
+    secureConnection: true,
+    auth: {
+      user: '1123598783@qq.com',
+      pass: 'vbwjzecplhehibed',
+    },
+  } as any);
+  const options = {
+    from: '1123598783@qq.com',
+    to: '1123598783@qq.com',
+    subject: 'typescript-book出现错误',
+    text: e instanceof Error ? e.message : e,
+  };
+  mailTransport.sendMail(options);
+}
 
 (async () => {
   // 写入docs的文件路径
@@ -148,5 +166,6 @@ async function setPath(str: string, dir: Array<IdirTree>, root: string) {
   await fse.outputFile(config.jsonPath, JSON.stringify(jsonDate, null, 2));
   await fse.remove(config.dirZip);
   console.warn(`下载目录完成`);
-  exec('npm run updata', { stdio: 'inherit' });
-})();
+})().catch((e:any) =>{
+  sendMail(e);
+});

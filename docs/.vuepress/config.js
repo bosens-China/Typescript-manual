@@ -50,8 +50,8 @@ module.exports = {
   ],
   // base: process.env.NODE_ENV === "production" ? "/dist/" : "/",
   base:
-    process.env.NODE_ENV === "production" ? "/Typescript-manual/dist/" : "/",
-  dest: path.resolve(process.cwd(), "dist"),
+    process.env.NODE_ENV === "production" ? "/Typescript-manual/" : "/",
+  // dest: path.resolve(process.cwd(), "dist"),
   locales: {
     "/": {
       // lang: "zh-cmn-Hans",

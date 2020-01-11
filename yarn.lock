@@ -792,6 +792,13 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.12.17.tgz?cache=0&sync_timestamp=1576006842132&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-12.12.17.tgz#191b71e7f4c325ee0fb23bc4a996477d92b8c39b"
   integrity sha1-GRtx5/TDJe4PsjvEqZZHfZK4w5s=
 
+"@types/nodemailer@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.npm.taobao.org/@types/nodemailer/download/@types/nodemailer-6.4.0.tgz#d8c039be3ed685c4719a026455555be82c124b74"
+  integrity sha1-2MA5vj7WhcRxmgJkVVVb6CwSS3Q=
+  dependencies:
+    "@types/node" "*"
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://registry.npm.taobao.org/@types/q/download/@types/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
@@ -5440,6 +5447,11 @@ node-unzip-2@^0.2.8:
     readable-stream "~1.0.0"
     setimmediate "~1.0.1"
 
+nodemailer@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.npm.taobao.org/nodemailer/download/nodemailer-6.4.2.tgz?cache=0&sync_timestamp=1576111088988&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnodemailer%2Fdownload%2Fnodemailer-6.4.2.tgz#7147550e32cdc37453380ab78d2074533966090a"
+  integrity sha1-cUdVDjLNw3RTOAq3jSB0UzlmCQo=
+
 nopt@1.0.10:
   version "1.0.10"
   resolved "https://registry.npm.taobao.org/nopt/download/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
@@ -8229,13 +8241,6 @@ vuepress-plugin-container@^2.0.2:
   integrity sha1-aIweWpcJobhlhgW8ruWAs6uxnRY=
   dependencies:
     markdown-it-container "^2.0.0"
-
-vuepress-plugin-nuggets-style-copy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/vuepress-plugin-nuggets-style-copy/download/vuepress-plugin-nuggets-style-copy-1.0.0.tgz?cache=0&sync_timestamp=1576820384571&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuepress-plugin-nuggets-style-copy%2Fdownload%2Fvuepress-plugin-nuggets-style-copy-1.0.0.tgz#696431f7cdc541084700e62d1b559ee8a8adafc3"
-  integrity sha1-aWQx983FQQhHAOYtG1We6Kitr8M=
-  dependencies:
-    clipboard "^2.0.4"
 
 vuepress-plugin-pangu@^1.0.1:
   version "1.0.1"

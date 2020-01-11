@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sider-open",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "keywords": [
@@ -9,7 +9,7 @@
     "sider",
     "open"
   ],
-  "repository": "https://github.com/bosens-China/Typescript-manual/tree/master/docs/Plugins/open",
+  "repository": "https://github.com/bosens-China/Typescript-manual/tree/master/Plugins/open",
   "author": "boses",
   "description": "Vuepress menu expand and collapse plug-in;vuePress菜单展开收起插件",
   "dependencies": {
