@@ -33,5 +33,4 @@ jobs:
           git config --global user.email "1123598783@qq.com"
           git config --global user.name "boses"
           npm install
-          npm run build
-          bash deploy.sh
+          npm run deploy
