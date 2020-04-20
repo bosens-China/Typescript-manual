@@ -22,7 +22,6 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh",
     "build": "node src/main.js",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/vuepress/cli.js  dev docs"
   },
@@ -31,6 +30,7 @@
     "> 1%",
     "IE 9"
   ],
+  "homepage": "https://bosens-china.github.io/Typescript-manual",
   "dependencies": {
     "fs-extra": "^9.0.0",
     "glob": "^7.1.6",

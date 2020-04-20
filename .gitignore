@@ -15,6 +15,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+deploy.sh
 **/dist
 *.zip
 docs/download
