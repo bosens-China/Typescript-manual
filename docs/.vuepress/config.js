@@ -11,7 +11,7 @@ module.exports = {
       item.test = new RegExp(item.test, 'i');
       if (item.test.source.includes('.md$')) {
         item.use.push({
-          loader: 'md-imgage-error-loader',
+          loader: path.join(process.cwd(), 'src/loader.js'),
           options: {
             dir: [
               path.resolve(process.cwd(), 'docs/download'),
