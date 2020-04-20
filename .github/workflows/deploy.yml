@@ -20,10 +20,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
+      - name: git Actions
+        uses: srt32/git-actions@v0.0.3
+      - name: Setup
         env:
-          ACCESS_TOKEN: ${{ secrets.ACTION_DEPLOY_KEY }}
-          BRANCH: gh-pages
-          FOLDER: docs/.vuepress/dist
-          BUILD_SCRIPT: npm install && npm run build && npm run docs:build
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "1123598783@qq.com"
+          git config --global user.name "boses"
+          npm install
+          npm run deploy

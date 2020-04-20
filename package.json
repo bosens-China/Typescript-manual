@@ -23,6 +23,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "node src/main.js",
+    "deploy": "bash deploy.sh",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/vuepress/cli.js  dev docs"
   },
   "browserslist": [
