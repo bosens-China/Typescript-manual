@@ -1,0 +1,56 @@
+.home .hero .description {
+  white-space: pre-wrap;
+}
+
+// 大于1800
+@media only screen and (min-width: 1800px) {
+  body {
+    .theme-default-content:not(.custom), .page-edit, .page-nav {
+      max-width: none;
+      margin: 0 auto;
+      padding: 2rem 15vw;
+    }
+  }
+}
+
+// 小于1200且大于(max-width: 719px)
+@media screen and (min-width: 719px) and (max-width: 1200px) {
+  #home {
+    .navbar {
+      padding-left: 4rem;
+
+      .sidebar-button {
+        display: block;
+      }
+    }
+
+    .theme-container .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+      display: block;
+    }
+
+    .sidebar-open .sidebar {
+      transform: translateX(0);
+      display: block;
+    }
+
+    .page {
+      padding-left: 0;
+    }
+
+    .theme-default-content:not(.custom), .page-nav {
+      padding: 3.7rem 6rem 2.5rem;
+      max-width: 100%;
+    }
+
+    .page-nav {
+      padding: 2rem 6rem;
+    }
+  }
+}
+
+// 隐藏尾部
+.page-edit {
+  display: none;
+}
