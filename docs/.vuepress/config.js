@@ -11,7 +11,7 @@ module.exports = {
       item.test = new RegExp(item.test, 'i');
       if (item.test.source.includes('.md$')) {
         item.use.push({
-          loader: path.join(process.cwd(), 'plugins/md-imgage-loader.js'),
+          loader: 'md-imgage-error-loader',
           options: {
             dir: [
               path.resolve(process.cwd(), 'docs/download'),
@@ -22,7 +22,6 @@ module.exports = {
         });
       }
     });
-    // config.resolveLoader.modules.push("../../plugins");
   },
 
   head: [
