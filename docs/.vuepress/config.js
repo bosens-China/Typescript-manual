@@ -11,12 +11,8 @@ module.exports = {
       item.test = new RegExp(item.test, 'i');
       if (item.test.source.includes('.md$')) {
         item.use.push({
-          loader: path.join(process.cwd(), 'src/loader.js'),
+          loader: 'md-imgage-error-loader',
           options: {
-            dir: [
-              path.resolve(process.cwd(), 'docs/download'),
-              path.resolve(process.cwd(), 'docs/.vuepress'),
-            ],
             src: 'http://xxxx.png',
           },
         });
@@ -112,6 +108,5 @@ module.exports = {
     // 百度站点推送
     'vuepress-plugin-baidu-autopush',
     'reading-progress',
-    'pangu',
   ],
 };
