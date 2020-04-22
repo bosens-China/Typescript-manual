@@ -108,5 +108,6 @@ module.exports = {
     // 百度站点推送
     'vuepress-plugin-baidu-autopush',
     'reading-progress',
+    'pangu',
   ],
 };

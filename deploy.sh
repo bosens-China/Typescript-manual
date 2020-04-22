@@ -10,13 +10,12 @@ npm run docs:build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
-
 git init
 git add -A
 git commit -m 'deploy'
-
 git push -f git@github.com:bosens-China/Typescript-manual.git master:gh-pages
+git remote add oschina git@47.102.122.237:/home/typeScript-docs/runoob.git
+# 更新阿里云
+git push -f oschina master
 
 cd -
