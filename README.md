@@ -10,7 +10,7 @@
 
 [在线阅读](https://bosens-china.github.io/Typescript-manual/)
 
-因为 github 维护等原因，访问速度可能会很慢，这里可以使用[备用地址](http://ts.yangliu.pub/)(后面可能会换成 https 如果后续范根错误，可以更改一下协议)
+> 因为 github 维护等原因，访问速度可能会很慢，这里可以使用[备用地址](http://ts.yangliu.pub/)(后面可能会换成 https 如果后续访问错误，可以更改一下协议)
 
 ## 爬虫地址
 
