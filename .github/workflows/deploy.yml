@@ -37,4 +37,6 @@ jobs:
           git config --global user.email "1123598783@qq.com"
           git config --global user.name "boses"
           npm install
-          npm run deploy
+          npm run build
+          npm run deploy:Github
+          npm run deploy:Alicloud

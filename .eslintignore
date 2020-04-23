@@ -1,2 +1,4 @@
 /dist
 **/node_modules
+# 对.开头的文件进行校验
+!docs/.vuepress

@@ -2,6 +2,10 @@ const path = require('path');
 
 const jsonPath = path.resolve(process.cwd(), 'configJson.json');
 const sidebar = require(jsonPath);
+// 暂时只简易获取
+const args = process.argv.splice(2);
+const base = args.includes('Alicloud');
+
 
 module.exports = {
   configureWebpack: (config) => {
@@ -27,8 +31,7 @@ module.exports = {
     ['meta', { name: 'google', content: 'notranslate' }],
     ['link', { rel: 'icon', href: '/favicon.png' }],
   ],
-  // base: process.env.NODE_ENV === "production" ? "/dist/" : "/",
-  base: process.env.NODE_ENV === 'production' ? '/Typescript-manual/' : '/',
+  base: (process.env.NODE_ENV === 'production' && !base) ? '/Typescript-manual/' : '/',
   locales: {
     '/': {
       lang: 'zh-CN',

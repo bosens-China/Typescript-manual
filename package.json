@@ -27,8 +27,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "node src/main.js",
-    "deploy": "bash deploy.sh",
-    "debug": "node --nolazy --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --no-cache"
+    "deploy:Github": "bash deploy-Github.sh",
+    "deploy:Alicloud": "bash deploy-Alicloud.sh",
+    "debug": "node --nolazy --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --no-cache "
   },
   "dependencies": {
     "fs-extra": "^9.0.0",
