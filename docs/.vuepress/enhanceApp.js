@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import dayjs from 'dayjs';
-import 'mutationobserver-shim';
 // 使用异步函数也是可以的
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -23,23 +22,26 @@ export default ({
     }
   });
   if (!isServer) {
-    // 添加最后修改时间
-    const observer = new MutationObserver(((mutations) => {
-      // 修改的元素不能是.page-edit，否则会造成无限循环
-      const existence = mutations.some((dom) => /page-edit/.test(dom.target.className));
-      if (existence) {
-        return;
-      }
-      const edit = document.body.querySelector('.page-edit');
-      if (edit) {
-        edit.innerHTML = `<div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">${dayjs(document.lastModified).format(
-          'YYYY-MM-DD HH:mm:ss',
-        )}</span></div>`;
-      }
-    }));
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
+    // 特定平台使用
+    import('mutationobserver-shim').then(() => {
+      // 添加最后修改时间
+      const observer = new MutationObserver(((mutations) => {
+        // 修改的元素不能是.page-edit，否则会造成无限循环
+        const existence = mutations.some((dom) => /page-edit/.test(dom.target.className));
+        if (existence) {
+          return;
+        }
+        const edit = document.body.querySelector('.page-edit');
+        if (edit) {
+          edit.innerHTML = `<div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">${dayjs(document.lastModified).format(
+            'YYYY-MM-DD HH:mm:ss',
+          )}</span></div>`;
+        }
+      }));
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
     });
   }
 };

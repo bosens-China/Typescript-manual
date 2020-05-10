@@ -5,6 +5,8 @@ module.exports = {
     es6: true,
     node: true,
   },
+  // 对不支持语法支持
+  parser: "babel-eslint",
   extends: ["airbnb-base"],
   globals: {
     Atomics: "readonly",
