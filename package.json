@@ -32,10 +32,12 @@
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/vuepress/cli.js dev docs --no-cache "
   },
   "dependencies": {
+    "dayjs": "^1.8.26",
     "fs-extra": "^9.0.0",
     "glob": "^7.1.6",
     "loader-utils": "^2.0.0",
     "markdown-it": "^10.0.0",
+    "mutationobserver-shim": "^0.3.5",
     "node-unzip-2": "^0.2.8",
     "request-promise": "^4.2.5"
   },
