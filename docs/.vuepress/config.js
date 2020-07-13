@@ -6,7 +6,6 @@ const sidebar = require(jsonPath);
 const args = process.argv.splice(2);
 const base = args.includes('Alicloud');
 
-
 module.exports = {
   configureWebpack: (config) => {
     // 修改所有的规则，让其支持大小写

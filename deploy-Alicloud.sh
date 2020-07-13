@@ -12,7 +12,7 @@ cd docs/.vuepress/dist
 git init
 git add -A
 git commit -m 'deploy'
-git remote add oschina git@47.102.122.237:/home/typeScript-docs/runoob.git
+git remote add oschina git@47.102.122.237:/home/gitrepo/typescript-docs.git
 git push -f oschina master
 
 cd -
