@@ -18,6 +18,11 @@
 
 [https://github.com/zhongsp/TypeScript](https://github.com/zhongsp/TypeScript)
 
+## 后续开发计划
+
+- 新增夜间模式
+- 新增设置选型
+
 ## 协议
 
 [MIT](/License)
