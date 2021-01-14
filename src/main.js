@@ -6,7 +6,8 @@ const {
 
 // 下载路径
 const downloadPath = path.resolve(process.cwd(), 'docs/download');
-const downloadUrl = 'https://github.com/zhongsp/TypeScript/archive/master.zip';
+// const downloadUrl = 'https://github.com/zhongsp/TypeScript/archive/master.zip';
+const downloadUrl = 'https://github.com/zhongsp/TypeScript/archive/dev.zip';
 const configJson = path.resolve(process.cwd(), 'configJson.json');
 
 async function readDate(readme) {
@@ -29,11 +30,20 @@ async function readDate(readme) {
         continue;
       }
       if (!path.isAbsolute(namePath)) {
-        readmePath = mdArr.find((f) => f.includes(namePath));
+        readmePath = mdArr.find((f) => {
+          const v = f.includes(namePath);
+          if (v) {
+            return v;
+          }
+          const n = namePath.split('/').pop();
+          return f.includes(n);
+        });
       }
+      if (readmePath) {
       // 路径要返回相对的路径
-      readmePath = readmePath.replace(path.join(process.cwd(), 'docs').replace(/\\/g, '/'), '');
-      item.push({ name, path: readmePath });
+        readmePath = readmePath.replace(path.join(process.cwd(), 'docs').replace(/\\/g, '/'), '');
+        item.push({ name, path: readmePath });
+      }
     }
   }
   // 将读取到的信息定制成json写到文件
@@ -58,7 +68,7 @@ async function readDate(readme) {
 async function App() {
   await fs.remove(downloadPath);
   await fs.ensureDir(downloadPath);
-  // 下载和解压文件夹
+  // // 下载和解压文件夹
   const zip = path.join(downloadPath, 'master.zip');
   await download(downloadUrl, zip);
   await decompression(zip, { path: downloadPath });

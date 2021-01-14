@@ -3,7 +3,6 @@ const rp = require('request-promise');
 const unzip = require('node-unzip-2');
 const glob = require('glob');
 
-
 function download(href, route) {
   return new Promise((resolve, reject) => {
     try {
@@ -15,7 +14,6 @@ function download(href, route) {
     }
   });
 }
-
 
 // 解压文件夹
 function decompression(route, output = {}) {
@@ -42,7 +40,7 @@ function globFile(...rest) {
   });
 }
 function isUrl(par) {
-  return (!!/(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.test(par));
+  return !!/(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.test(par);
 }
 
 exports.download = download;
