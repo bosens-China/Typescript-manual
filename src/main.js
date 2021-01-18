@@ -1,13 +1,11 @@
 const fs = require('fs-extra');
 const path = require('path');
-const {
-  download, decompression, globFile, isUrl,
-} = require('./utils');
+const { downloadGie, globFile, isUrl } = require('./utils');
 
 // 下载路径
 const downloadPath = path.resolve(process.cwd(), 'docs/download');
-// const downloadUrl = 'https://github.com/zhongsp/TypeScript/archive/master.zip';
-const downloadUrl = 'https://github.com/zhongsp/TypeScript/archive/dev.zip';
+// 镜像网站
+const downloadUrl = 'https://github.com.cnpmjs.org:zhongsp/TypeScript#dev';
 const configJson = path.resolve(process.cwd(), 'configJson.json');
 
 async function readDate(readme) {
@@ -40,7 +38,7 @@ async function readDate(readme) {
         });
       }
       if (readmePath) {
-      // 路径要返回相对的路径
+        // 路径要返回相对的路径
         readmePath = readmePath.replace(path.join(process.cwd(), 'docs').replace(/\\/g, '/'), '');
         item.push({ name, path: readmePath });
       }
@@ -66,16 +64,16 @@ async function readDate(readme) {
 }
 
 async function App() {
+  // 删除目录和重新创建目录
   await fs.remove(downloadPath);
   await fs.ensureDir(downloadPath);
-  // // 下载和解压文件夹
-  const zip = path.join(downloadPath, 'master.zip');
-  await download(downloadUrl, zip);
-  await decompression(zip, { path: downloadPath });
-  // 读取到markwon的描述文件，然后解析确定
+  // 下载文件
+  await downloadGie(downloadUrl, downloadPath);
+  // 读取到markwon的描述文件，然后解析确定里面的文件
   const file = await globFile('/**/README.md', {
     root: downloadPath,
   });
+  // 排序一下输出
   const [typeScriptDir] = file.sort((x, y) => x.length - y.length);
   await readDate(typeScriptDir);
 }

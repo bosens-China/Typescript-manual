@@ -1,32 +1,6 @@
-const fs = require('fs-extra');
-const rp = require('request-promise');
-const unzip = require('node-unzip-2');
+// const fs = require('fs-extra');
+const download = require('download-git-repo');
 const glob = require('glob');
-
-function download(href, route) {
-  return new Promise((resolve, reject) => {
-    try {
-      rp(href)
-        .pipe(fs.createWriteStream(route))
-        .on('close', () => resolve(true));
-    } catch (e) {
-      reject(e);
-    }
-  });
-}
-
-// 解压文件夹
-function decompression(route, output = {}) {
-  return new Promise((resolve, reject) => {
-    try {
-      fs.createReadStream(route)
-        .pipe(unzip.Extract(output))
-        .on('close', () => resolve(true));
-    } catch (e) {
-      reject(e);
-    }
-  });
-}
 
 // 读取文件
 function globFile(...rest) {
@@ -43,7 +17,16 @@ function isUrl(par) {
   return !!/(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.test(par);
 }
 
-exports.download = download;
-exports.decompression = decompression;
+function downloadGie(git, dir) {
+  return new Promise((resolve, reject) => {
+    download(git, dir, { clone: true }, (err) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(undefined);
+    });
+  });
+}
 exports.globFile = globFile;
 exports.isUrl = isUrl;
+exports.downloadGie = downloadGie;
