@@ -49,7 +49,12 @@ async function App() {
   if (!(await isExistence(downloadPath))) {
     await fs.ensureDir(downloadPath);
     // 下载文件
-    await downloadGie(downloadUrl, downloadPath);
+    try {
+      await downloadGie(downloadUrl, downloadPath);
+    } catch (e) {
+      // 如果下载失败，使用github的镜像再次拉取一次
+      await downloadGie(downloadUrl.replace('github.com.cnpmjs.org', 'github.com'), downloadPath);
+    }
   }
   // README的路径
   const md = path.join(downloadPath, 'README.md');
