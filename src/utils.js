@@ -1,21 +1,5 @@
-// const fs = require('fs-extra');
+const fs = require('fs-extra');
 const download = require('download-git-repo');
-const glob = require('glob');
-
-// 读取文件
-function globFile(...rest) {
-  return new Promise((resolve, reject) => {
-    glob(...rest, (err, me) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(me);
-    });
-  });
-}
-function isUrl(par) {
-  return !!/(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.test(par);
-}
 
 function downloadGie(git, dir) {
   return new Promise((resolve, reject) => {
@@ -27,6 +11,13 @@ function downloadGie(git, dir) {
     });
   });
 }
-exports.globFile = globFile;
-exports.isUrl = isUrl;
+function isExistence(p) {
+  return fs
+    // eslint-disable-next-line no-bitwise
+    .access(p, fs.constants.R_OK | fs.constants.W_OK)
+    .then(() => true)
+    .catch(() => false);
+}
+
 exports.downloadGie = downloadGie;
+exports.isExistence = isExistence;
