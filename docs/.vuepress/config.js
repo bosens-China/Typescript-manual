@@ -24,7 +24,7 @@ module.exports = {
   },
 
   head: [
-    ['meta', { name: 'keywords', content: 'typescript,中文,手册,文档' }],
+    ['meta', { name: 'keywords', content: 'typescript,docs,手册,文档' }],
     ['meta', { name: 'author', content: 'boses' }],
     // 禁止自动翻译
     ['meta', { name: 'google', content: 'notranslate' }],
@@ -34,7 +34,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'TypeScript中文手册',
+      title: 'TypeScript手册',
       description:
         'TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。\n  TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行，并且是开源的。',
     },
