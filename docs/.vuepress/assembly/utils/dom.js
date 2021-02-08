@@ -1,5 +1,4 @@
 // 一个hock方法
-
 export class Observer {
   constructor(name) {
     this.id = null;

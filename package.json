@@ -43,7 +43,8 @@
     "markdown-it": "^10.0.0",
     "vue": "^2.6.12",
     "vue-clipboard2": "^0.3.1",
-    "vue-m-message": "^3.1.0"
+    "vue-m-message": "^3.1.0",
+    "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
   },
   "config": {
     "commitizen": {

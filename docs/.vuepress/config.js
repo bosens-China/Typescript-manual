@@ -8,8 +8,10 @@ const isAlicloud = process.env.OPERATION_MODE === 'Alicloud';
 
 const copy = require('./assembly/copy');
 const update = require('./assembly/update');
+const switchThemes = require('./assembly/switchThemes');
 
 module.exports = {
+  theme: 'default-prefers-color-scheme',
   configureWebpack: (config) => {
     // 修改所有的规则，让其支持大小写
     config.module.rules.forEach((list) => {
@@ -27,6 +29,7 @@ module.exports = {
   },
 
   head: [
+    ['meta', { name: 'theme-color', content: '#fff' }],
     ['meta', { name: 'keywords', content: 'typescript,docs,手册,文档' }],
     ['meta', { name: 'author', content: 'boses' }],
     // 禁止自动翻译
@@ -112,5 +115,7 @@ module.exports = {
     'pangu',
     copy,
     update,
+    switchThemes,
   ],
+  evergreen: false,
 };

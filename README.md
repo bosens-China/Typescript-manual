@@ -11,6 +11,7 @@
 所以基于上面问题，使用 node + [vuePress](https://vuepress.vuejs.org/) 创建了这个仓库，每天早上会 5 点会定时更新。
 
 > 因为 github 访问不稳定，这里提供一个[备用地址](https://tsc.yangliu.pub/)，如果喜欢请点击一下 `star` 支持一下
+> 注意，请不要再`ie`等低版本浏览器阅读，因为没有做任何 polyfill 处理
 
 ## 爬虫地址
 

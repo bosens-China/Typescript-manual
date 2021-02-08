@@ -5,5 +5,5 @@ export default ({ Vue, isServer }) => {
   if (isServer) {
     return;
   }
-  Vue.component('update', index);
+  Vue.component('switchThemes', index);
 };

@@ -9224,6 +9224,11 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
+vuepress-theme-default-prefers-color-scheme@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/vuepress-theme-default-prefers-color-scheme/download/vuepress-theme-default-prefers-color-scheme-2.0.0.tgz#c5d305b1b4d10d0915b4bb413e554966d5171b25"
+  integrity sha1-xdMFsbTRDQkVtLtBPlVJZtUXGyU=
+
 vuepress@^1.8.0:
   version "1.8.0"
   resolved "https://registry.npm.taobao.org/vuepress/download/vuepress-1.8.0.tgz#0139d466b33fbfdb628abb76d555368b85cf9772"

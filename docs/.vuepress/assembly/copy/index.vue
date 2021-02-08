@@ -8,8 +8,14 @@ import copy from './copy.vue';
 import { Observer } from '../utils/dom';
 
 export default {
+  data() {
+    return {
+      observer: new Observer('div[class*="language-"]'),
+    };
+  },
   watch: {
     $route() {
+      this.observer.clear();
       this.update();
     },
   },
@@ -18,8 +24,7 @@ export default {
   },
   methods: {
     update() {
-      const observer = new Observer('div[class*="language-"]');
-      observer.start().then((e) => {
+      this.observer.start().then((e) => {
         const domAll = e;
         domAll.forEach((item) => {
           if (item.querySelector('.copy-code-btn')) {
