@@ -1,25 +1,21 @@
 module.exports = {
   env: {
     browser: true,
-    commonjs: true,
-    es6: true,
+    es2021: true,
     node: true,
   },
-  // 对不支持语法支持
-  parser: "babel-eslint",
-  extends: ["airbnb-base"],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
-  },
+  extends: [
+    'plugin:vue/essential',
+    'airbnb-base',
+  ],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
+  plugins: [
+    'vue',
+  ],
   rules: {
-    "linebreak-style": "off",
-    "import/prefer-default-export": "off",
-    "no-restricted-syntax": "off",
-    "no-continue": "off",
-    "import/no-dynamic-require": "off",
+    'no-restricted-syntax': 'off',
   },
 };

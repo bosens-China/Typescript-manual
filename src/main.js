@@ -29,6 +29,7 @@ async function readDate(readme) {
       const [, title, p] = item;
       // 不能包含README.md
       if (/README\.md/.test(p)) {
+        // eslint-disable-next-line no-continue
         continue;
       }
       const completePath = path.join(readme, '../', p).replace(/\\/g, '/');
