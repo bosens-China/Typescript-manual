@@ -5,22 +5,32 @@
 <script>
 import Vue from 'vue';
 import copy from './copy.vue';
+import { Observer } from '../utils/dom';
 
 export default {
   watch: {
-    $route: {
-      immediate: true,
-      handler() {
-        this.$nextTick().then(() => {
-          const domAll = Array.from(document.body.querySelectorAll('div[class*="language-"]'));
-          domAll.forEach((item) => {
-            const Root = Vue.extend(copy);
-            const app = new Root({ data: { parentDom: item } });
-            const vm = app.$mount();
-            item.appendChild(vm.$el);
-          });
+    $route() {
+      this.update();
+    },
+  },
+  mounted() {
+    this.update();
+  },
+  methods: {
+    update() {
+      const observer = new Observer('div[class*="language-"]');
+      observer.start().then((e) => {
+        const domAll = e;
+        domAll.forEach((item) => {
+          if (item.querySelector('.copy-code-btn')) {
+            return;
+          }
+          const Root = Vue.extend(copy);
+          const app = new Root({ data: { parentDom: item } });
+          const vm = app.$mount();
+          item.appendChild(vm.$el);
         });
-      },
+      });
     },
   },
 

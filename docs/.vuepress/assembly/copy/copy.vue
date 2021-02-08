@@ -1,5 +1,5 @@
 <template>
-  <span @click="onCopy" class="copy-code-btn">复制代码</span>
+  <span @click="onCopy" title="复制当前代码" class="copy-code-btn">复制代码</span>
 </template>
 
 <script>
@@ -14,11 +14,7 @@ export default {
     onCopy() {
       const html = this.parentDom.querySelector('pre').textContent;
       this.$copyText(html).then(() => {
-        this.$notification.open({
-          description: '',
-          message: '复制成功',
-          duration: 1.5,
-        });
+        this.$message.success('复制成功');
       });
     },
   },

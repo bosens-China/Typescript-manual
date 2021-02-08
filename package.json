@@ -27,6 +27,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "docs:build-Alicloud": "cross-env OPERATION_MODE=Alicloud vuepress build docs",
     "build": "node src/main.js",
     "deploy:Github": "bash shell/deploy-Github.sh",
     "deploy:Alicloud": "bash shell/deploy-Alicloud.sh",
@@ -34,15 +35,15 @@
   },
   "dependencies": {
     "@vuepress/shared-utils": "^1.8.0",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.8.26",
     "download-git-repo": "^3.0.2",
-    "element-ui": "^2.15.0",
     "fs-extra": "^9.0.0",
     "loader-utils": "^2.0.0",
     "markdown-it": "^10.0.0",
-    "mutationobserver-shim": "^0.3.5",
     "vue": "^2.6.12",
-    "vue-clipboard2": "^0.3.1"
+    "vue-clipboard2": "^0.3.1",
+    "vue-m-message": "^3.1.0"
   },
   "config": {
     "commitizen": {

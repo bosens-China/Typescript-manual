@@ -8,7 +8,7 @@ export default ({ Vue, isServer }) => {
   if (isServer) {
     return;
   }
-  Vue.component('copy', index);
+  Vue.component('update', index);
   Vue.use(VueClipboard);
   Vue.use(Message);
 };
