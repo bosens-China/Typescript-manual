@@ -13,6 +13,7 @@ const switchThemes = require('./assembly/switchThemes');
 module.exports = {
   theme: 'default-prefers-color-scheme',
   configureWebpack: (config) => {
+    config.entry.app.unshift('babel-polyfill');
     // 修改所有的规则，让其支持大小写
     config.module.rules.forEach((list) => {
       const item = list;

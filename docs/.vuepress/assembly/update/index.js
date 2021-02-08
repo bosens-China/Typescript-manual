@@ -4,5 +4,6 @@ module.exports = {
   enhanceAppFiles: [
     path.resolve(__dirname, 'enhanceAppFile.js'),
   ],
-  globalUIComponents: 'update',
+  name: 'update',
+  clientRootMixin: path.resolve(__dirname, 'clientRootMixin.js'),
 };

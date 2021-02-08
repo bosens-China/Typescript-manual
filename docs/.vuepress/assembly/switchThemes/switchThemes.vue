@@ -1,5 +1,6 @@
 <template>
   <button
+    v-if="show"
     @click="onClick"
     aria-label="切换主题"
     title="切换主题"
@@ -10,7 +11,6 @@
 </template>
 
 <script>
-import { Observer } from '../utils/dom';
 import loc from './localStorage';
 
 const key = '__mode';
@@ -19,24 +19,17 @@ export default {
   data() {
     return {
       isLight: true,
-      observer: new Observer('.sidebar'),
+      show: false,
     };
   },
-  watch: {
-    $route() {
-      this.observer.clear();
-      this.update();
-    },
-  },
-
   computed: {
     mode() {
       return this.isLight ? 'light' : 'dark';
     },
   },
   mounted() {
+    this.show = this.isVariableCss();
     this.getThemeValue();
-    this.update();
   },
   methods: {
     // 获取主题的初始值，思路如下，如果系统可以使用深色模式则使用系统的设置，否则使用用户配置
@@ -71,15 +64,10 @@ export default {
         loc.set(key, this.mode);
       });
     },
-    update() {
-      this.observer.start().then(([e]) => {
-        const dom = e;
-        const nav = document.body.querySelector('.sidebar .nav-links');
-        if (!nav) {
-          return;
-        }
-        dom.insertBefore(this.$el, nav);
-      });
+    // 是否支持css变量，如果不支持隐藏视图
+    isVariableCss() {
+      const isSupported = window.CSS && window.CSS.supports && window.CSS.supports('--switch-themes-test', 0);
+      return !!isSupported;
     },
   },
 };
@@ -128,4 +116,5 @@ export default {
   border-color: ##3ab982;
   border-color: var(--accent-color);
 }
+/* 对于不支持 */
 </style>
