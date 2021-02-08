@@ -7,6 +7,8 @@ const sidebar = require(jsonPath);
 const args = process.argv.splice(2);
 const base = args.includes('Alicloud');
 
+const copy = require('./assembly/copy');
+
 module.exports = {
   configureWebpack: (config) => {
     // 修改所有的规则，让其支持大小写
@@ -44,12 +46,6 @@ module.exports = {
     // logo: '/favicon.png',
     locales: {
       '/': {
-        serviceWorker: {
-          updatePopup: {
-            message: '发现新内容可用.',
-            buttonText: '刷新',
-          },
-        },
         nav: [
           { text: '进入目录', link: '/describe/' },
           {
@@ -110,7 +106,10 @@ module.exports = {
     '@vuepress/nprogress',
     // 百度站点推送
     'vuepress-plugin-baidu-autopush',
+    // 显示阅读进度条
     'reading-progress',
+    // md更好格式
     'pangu',
+    copy,
   ],
 };
