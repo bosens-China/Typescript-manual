@@ -30,7 +30,7 @@ module.exports = {
   },
 
   head: [
-    ['meta', { name: 'theme-color', content: '#fff' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0,user-scalable=no, viewport-fit=cover' }],
     ['meta', { name: 'keywords', content: 'typescript,docs,手册,文档' }],
     ['meta', { name: 'author', content: 'boses' }],
     // 禁止自动翻译

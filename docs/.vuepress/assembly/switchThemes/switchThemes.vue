@@ -1,6 +1,5 @@
 <template>
   <button
-    v-if="show"
     @click="onClick"
     aria-label="切换主题"
     title="切换主题"
@@ -18,56 +17,74 @@ const key = '__mode';
 export default {
   data() {
     return {
-      isLight: true,
-      show: false,
+      key: 'default',
+      list: {
+        default: '跟随系统',
+        light: '浅色模式',
+        dark: '深色模式',
+      },
     };
   },
   computed: {
     mode() {
-      return this.isLight ? 'light' : 'dark';
+      return this.list[this.key];
     },
   },
   mounted() {
-    this.show = this.isVariableCss();
     this.getThemeValue();
   },
   methods: {
     // 获取主题的初始值，思路如下，如果系统可以使用深色模式则使用系统的设置，否则使用用户配置
     getThemeValue() {
-      if (!window.matchMedia) {
-        const value = loc.get(key);
-        if (!value) {
-          this.isLight = document.documentElement.getAttribute('theme') === 'light';
-        } else {
-          this.isLight = loc.get(key) === 'light';
-        }
+      const value = loc.get(key);
+      if (!value) {
+        this.key = 'default';
       } else {
+        this.key = value;
+      }
+      if (this.key === 'default' && !window.matchMedia) {
+        this.setTheme('light');
+        return;
+      }
+      if (this.key === 'default' && window.matchMedia) {
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-        if (darkMode.matches) {
-          this.isLight = false;
-        }
+        this.setTheme(darkMode.matches ? 'dark' : 'light');
         // 监听主题切换事件
         darkMode.addEventListener('change', (e) => {
-          this.isLight = e.matches;
+          this.setTheme(e.matches ? 'dark' : 'light');
         });
+        return;
       }
       this.setTheme();
     },
     // 切换主题
     onClick() {
-      this.isLight = !this.isLight;
-      this.setTheme();
+      const defaultKey = () => {
+        if (!window.matchMedia) {
+          return 'light';
+        }
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+        return darkMode.matches ? 'dark' : 'light';
+      };
+      switch (this.key) {
+        case 'default':
+          this.key = 'light';
+          break;
+        case 'light':
+          this.key = 'dark';
+          break;
+
+        default:
+          this.key = 'default';
+          break;
+      }
+      this.setTheme(this.key === 'default' ? defaultKey() : this.key);
     },
-    setTheme() {
+    setTheme(value = this.key) {
       this.$nextTick().then(() => {
-        document.documentElement.setAttribute('theme', this.mode);
-        loc.set(key, this.mode);
+        document.documentElement.setAttribute('theme', value);
+        loc.set(key, value);
       });
-    },
-    // 是否支持css变量，如果不支持隐藏视图
-    isVariableCss() {
-      const isSupported = window.CSS && window.CSS.supports && window.CSS.supports('--switch-themes-test', 0);
-      return !!isSupported;
     },
   },
 };
@@ -117,4 +134,9 @@ export default {
   border-color: var(--accent-color);
 }
 /* 对于不支持 */
+@supports (not (--a: 0)) {
+  .vue-dark-mode {
+    display: none;
+  }
+}
 </style>
