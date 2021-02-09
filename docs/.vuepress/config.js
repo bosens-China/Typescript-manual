@@ -1,4 +1,5 @@
 const path = require('path');
+const { globFileAll } = require('./utils');
 
 const jsonPath = path.resolve(process.cwd(), 'configJson.json');
 // eslint-disable-next-line import/no-dynamic-require
@@ -22,7 +23,9 @@ module.exports = {
         item.use.push({
           loader: 'md-imgage-error-loader',
           options: {
-            src: 'http://xxxx.png',
+            src(value, mdPath) {
+              return globFileAll(value, mdPath);
+            },
           },
         });
       }
@@ -30,7 +33,13 @@ module.exports = {
   },
 
   head: [
-    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0,user-scalable=no, viewport-fit=cover' }],
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0,user-scalable=no, viewport-fit=cover',
+      },
+    ],
     ['meta', { name: 'keywords', content: 'typescript,docs,手册,文档' }],
     ['meta', { name: 'author', content: 'boses' }],
     // 禁止自动翻译
