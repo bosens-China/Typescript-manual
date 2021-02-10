@@ -48,10 +48,14 @@ export default {
       }
       if (this.key === 'default' && window.matchMedia) {
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-        this.setTheme(darkMode.matches ? 'dark' : 'light');
+        this.setTheme(darkMode.matches ? 'dark' : 'light').then(() => {
+          loc.set(key, 'default');
+        });
         // 监听主题切换事件
         darkMode.addEventListener('change', (e) => {
-          this.setTheme(e.matches ? 'dark' : 'light');
+          this.setTheme(e.matches ? 'dark' : 'light').then(() => {
+            loc.set(key, 'default');
+          });
         });
         return;
       }
@@ -78,10 +82,16 @@ export default {
           this.key = 'default';
           break;
       }
-      this.setTheme(this.key === 'default' ? defaultKey() : this.key);
+      if (this.key === 'default') {
+        this.setTheme(defaultKey()).then(() => {
+          loc.set(key, 'default');
+        });
+        return;
+      }
+      this.setTheme();
     },
     setTheme(value = this.key) {
-      this.$nextTick().then(() => {
+      return this.$nextTick().then(() => {
         document.documentElement.setAttribute('theme', value);
         loc.set(key, value);
       });
