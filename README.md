@@ -10,7 +10,7 @@
 
 所以基于上面问题，使用 node + [vuePress](https://vuepress.vuejs.org/) 创建了这个仓库，每天早上会 5 点会定时更新。
 
-> 因为 github 访问不稳定，这里提供一个[备用地址](https://tsc.yangliu.pub/)，如果喜欢请点击一下 `star` 支持一下
+> ~~因为 github 访问不稳定，这里提供一个[备用地址](https://tsc.yangliu.pub/)，如果喜欢请点击一下 `star` 支持一下~~
 
 > 注意很多插件没做 polyfill 处理，请不要再 `IE11` 以下低版本浏览器阅读
 
