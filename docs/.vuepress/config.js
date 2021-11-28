@@ -4,8 +4,6 @@ const { globFileAll } = require('./utils');
 const jsonPath = path.resolve(process.cwd(), 'configJson.json');
 // eslint-disable-next-line import/no-dynamic-require
 const sidebar = require(jsonPath);
-// 是否为非github环境
-const isAlicloud = process.env.OPERATION_MODE === 'Alicloud';
 
 const copy = require('./assembly/copy');
 const update = require('./assembly/update');
@@ -46,7 +44,7 @@ module.exports = {
     ['meta', { name: 'google', content: 'notranslate' }],
     ['link', { rel: 'icon', href: '/favicon.png' }],
   ],
-  base: process.env.NODE_ENV === 'production' && !isAlicloud ? '/Typescript-manual/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/Typescript-manual/' : '/',
   locales: {
     '/': {
       lang: 'zh-CN',
