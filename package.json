@@ -27,8 +27,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "build": "node src/main.js",
-    "deploy": "bash shell/deploy.sh"
+    "build": "node src/main.js && npm run docs:build"
   },
   "dependencies": {
     "@vuepress/shared-utils": "^1.8.0",
