@@ -13,14 +13,17 @@
 <!-- > ~~因为 github 访问不稳定，这里提供一个[备用地址](https://tsc.yangliu.pub/)，如果喜欢请点击一下 `star` 支持一下~~ -->
 
 > 注意：很多插件没做 Polyfill 处理，请不要使用低版本浏览器来访问。
+>
 > 同时因为使用了 Github Actions 原因，不会把每次的提交记录都展示到项目主页，如果想判断文档是不是最新的，可以通过 [前言](https://bosens-china.github.io/Typescript-manual/describe/) 最下方的上次更新时间了解。
 
-## 文档来源地址
+## [文档来源地址](https://github.com/zhongsp/TypeScript)
 
-[zhongsp/TypeScript](https://github.com/zhongsp/TypeScript)，感谢作者同时他也是 《TypeScript 入门与实战》一书作者，有兴趣小伙伴可以了解一下。
+感谢作者，同时他也是 《TypeScript 入门与实战》一书作者，有兴趣小伙伴可以了解一下。
+
 对于后续阅读过程中出现的文字标点或者内容错误问题，请提到该仓库[TypeScript/issues](https://github.com/zhongsp/TypeScript/issues) 下。
 
 ## 开发计划
+
 已完成和待开发任务见下文 [TODO](/TODO.md)，不过因为最近事情比较多问题，只能无限拖延，期待有相同爱好小伙伴一起开发。
 
 ## 协议
