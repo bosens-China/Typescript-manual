@@ -1,14 +1,14 @@
 {
   "name": "typescript-manual",
   "version": "1.0.0",
-  "description": "typescript 手册",
+  "description": "TypeScript 中文手册，使用vuepress构建。",
   "private": "true",
+  "license": "MIT",
   "keywords": [
     "typescript",
     "docs"
   ],
   "author": "boses",
-  "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.4.1",
