@@ -13,7 +13,6 @@
     "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -44,10 +43,5 @@
     "vue-clipboard2": "^0.3.1",
     "vue-m-message": "^3.1.0",
     "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
