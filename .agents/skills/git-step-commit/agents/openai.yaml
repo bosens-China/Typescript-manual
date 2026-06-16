@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Git Step Commit'
+  short_description: 'Split changes into coherent Git commits'
+  default_prompt: 'Use $git-step-commit to review my Git changes and commit them in sensible batches.'

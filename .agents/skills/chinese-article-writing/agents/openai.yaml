@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Chinese Article Writing'
+  short_description: 'Polish Chinese technical writing'
+  default_prompt: 'Use $chinese-article-writing to polish this Chinese technical article for clarity, tone, and formatting.'
