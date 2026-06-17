@@ -1,9 +1,13 @@
 import { access, constants } from 'node:fs/promises';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 export function gitClone(url: string, dir: string, branch?: string): void {
-  const branchArg = branch ? `--branch ${branch} ` : '';
-  execSync(`git clone --depth 1 ${branchArg}${url} ${dir}`, { stdio: 'inherit' });
+  const args = ['clone', '--depth', '1'];
+  if (branch) {
+    args.push('--branch', branch);
+  }
+  args.push(url, dir);
+  execFileSync('git', args, { stdio: 'inherit' });
 }
 
 export async function fileExists(p: string): Promise<boolean> {
