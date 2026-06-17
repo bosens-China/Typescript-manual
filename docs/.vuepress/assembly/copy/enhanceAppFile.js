@@ -4,7 +4,7 @@ import 'vue-m-message/dist/index.css';
 import index from './copy.vue';
 
 export default ({ Vue }) => {
-  Vue.component('copy', index);
+  Vue.component('CopyCodeBtn', index);
   Vue.use(VueClipboard);
   Vue.use(Message);
 };
