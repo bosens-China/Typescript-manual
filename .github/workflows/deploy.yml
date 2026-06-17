@@ -5,31 +5,35 @@ on:
     branches:
       - master
   schedule:
-    - cron: "0 21 * * *"
+    - cron: '0 21 * * *'
 
 jobs:
   docs:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 新增权限声明
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: 'yarn'  # 启用自动缓存
-
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline  # 加速安装
+        run: pnpm install --frozen-lockfile
 
       - name: Build VuePress site
-        run: yarn build
+        run: pnpm build
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
