@@ -15,14 +15,22 @@ interface SidebarSection {
   children: SidebarChild[];
 }
 
+interface PendingChild extends SidebarChild {
+  completePath: string;
+}
+
+interface PendingSection extends Omit<SidebarSection, 'children'> {
+  children: PendingChild[];
+}
+
 export default async function getJson(filePath: string): Promise<SidebarSection[]> {
   const content = await readFile(filePath, 'utf-8');
   const md = new MarkdownIt();
   const tokens = md.parse(content, {});
 
-  const json: SidebarSection[] = [];
+  const pending: PendingSection[] = [];
   let listDepth = 0;
-  let currentSection: SidebarSection | null = null;
+  let currentSection: PendingSection | null = null;
 
   for (const token of tokens) {
     if (token.type === 'bullet_list_open') {
@@ -65,19 +73,27 @@ export default async function getJson(filePath: string): Promise<SidebarSection[
       const docsPath = path.join(process.cwd(), 'docs').replace(/\\/g, '/');
       const readmePath = completePath.replace(docsPath, '');
 
-      if (await fileExists(completePath)) {
-        currentSection.children.push({ path: readmePath, title: linkText });
-      }
+      currentSection.children.push({ path: readmePath, title: linkText, completePath });
     }
 
     // End of top-level item → finalize section
     if (token.type === 'list_item_close' && listDepth === 1 && currentSection) {
       if (currentSection.children.length) {
-        json.push(currentSection);
+        pending.push(currentSection);
       }
       currentSection = null;
     }
   }
 
-  return json;
+  const resolved = await Promise.all(
+    pending.map(async (section) => {
+      const exists = await Promise.all(section.children.map((c) => fileExists(c.completePath)));
+      const children: SidebarChild[] = section.children
+        .filter((_, i) => exists[i])
+        .map((c) => ({ path: c.path, title: c.title }));
+      return { ...section, children };
+    }),
+  );
+
+  return resolved.filter((s) => s.children.length);
 }
