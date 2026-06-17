@@ -8,8 +8,6 @@ export default {
   },
   methods: {
     updateUpdate() {
-      if (this._updateObserverStarted) return;
-      this._updateObserverStarted = true;
       const observer = new Observer('.page-edit');
       observer
         .start()

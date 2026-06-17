@@ -8,8 +8,6 @@ export default {
   },
   methods: {
     updateCopy() {
-      if (this._copyObserverStarted) return;
-      this._copyObserverStarted = true;
       const observer = new Observer('div[class*="language-"]');
       observer
         .start()

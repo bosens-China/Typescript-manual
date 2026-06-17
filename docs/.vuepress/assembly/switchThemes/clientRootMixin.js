@@ -8,8 +8,6 @@ export default {
   },
   methods: {
     updateSwitchThemes() {
-      if (this._switchThemesObserverStarted) return;
-      this._switchThemesObserverStarted = true;
       const observer = new Observer('.sidebar');
       observer
         .start()
