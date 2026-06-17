@@ -8,6 +8,7 @@
 import dayjs from 'dayjs';
 
 export default {
+  name: 'LastUpdated',
   data() {
     return {
       time: dayjs(document.lastModified).format('YYYY-MM-DD HH:mm:ss'),
