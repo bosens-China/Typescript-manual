@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { gitClone, fileExists } from './utils.js';
 import getJson from './getJson.js';
 
@@ -14,7 +14,10 @@ async function App(): Promise<void> {
     try {
       gitClone(repoUrl, downloadPath, branch);
     } catch {
-      const mirrorUrl = repoUrl.replace('github.com', 'github.com.cnpmjs.org');
+      // 第一次克隆可能已经向目录写入了部分内容，git clone 要求目标为空，先清理。
+      await rm(downloadPath, { recursive: true, force: true });
+      await mkdir(downloadPath, { recursive: true });
+      const mirrorUrl = repoUrl.replace('github.com', 'kkgithub.com');
       gitClone(mirrorUrl, downloadPath, branch);
     }
   }
