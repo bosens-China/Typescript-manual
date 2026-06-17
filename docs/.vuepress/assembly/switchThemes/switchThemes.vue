@@ -15,9 +15,10 @@ import loc from './localStorage';
 const key = '__mode';
 
 export default {
+  name: 'SwitchThemes',
   data() {
     return {
-      key: 'default',
+      themeMode: 'default',
       list: {
         default: '跟随系统',
         light: '浅色模式',
@@ -27,8 +28,13 @@ export default {
   },
   computed: {
     mode() {
-      return this.list[this.key];
+      return this.list[this.themeMode];
     },
+  },
+  beforeDestroy() {
+    if (this._darkModeHandler) {
+      this._darkModeMedia?.removeEventListener('change', this._darkModeHandler);
+    }
   },
   mounted() {
     this.getThemeValue();
@@ -38,25 +44,27 @@ export default {
     getThemeValue() {
       const value = loc.get(key);
       if (!value) {
-        this.key = 'default';
+        this.themeMode = 'default';
       } else {
-        this.key = value;
+        this.themeMode = value;
       }
-      if (this.key === 'default' && !window.matchMedia) {
+      if (this.themeMode === 'default' && !window.matchMedia) {
         this.setTheme('light');
         return;
       }
-      if (this.key === 'default' && window.matchMedia) {
+      if (this.themeMode === 'default' && window.matchMedia) {
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
         this.setTheme(darkMode.matches ? 'dark' : 'light').then(() => {
           loc.set(key, 'default');
         });
         // 监听主题切换事件
-        darkMode.addEventListener('change', (e) => {
+        this._darkModeMedia = darkMode;
+        this._darkModeHandler = (e) => {
           this.setTheme(e.matches ? 'dark' : 'light').then(() => {
             loc.set(key, 'default');
           });
-        });
+        };
+        darkMode.addEventListener('change', this._darkModeHandler);
         return;
       }
       this.setTheme();
@@ -70,19 +78,19 @@ export default {
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
         return darkMode.matches ? 'dark' : 'light';
       };
-      switch (this.key) {
+      switch (this.themeMode) {
         case 'default':
-          this.key = 'light';
+          this.themeMode = 'light';
           break;
         case 'light':
-          this.key = 'dark';
+          this.themeMode = 'dark';
           break;
 
         default:
-          this.key = 'default';
+          this.themeMode = 'default';
           break;
       }
-      if (this.key === 'default') {
+      if (this.themeMode === 'default') {
         this.setTheme(defaultKey()).then(() => {
           loc.set(key, 'default');
         });
@@ -90,7 +98,7 @@ export default {
       }
       this.setTheme();
     },
-    setTheme(value = this.key) {
+    setTheme(value = this.themeMode) {
       return this.$nextTick().then(() => {
         document.documentElement.setAttribute('theme', value);
         loc.set(key, value);
@@ -140,7 +148,7 @@ export default {
   outline: none;
 }
 .btn-color-mode.vue-dark-mode:focus {
-  border-color: ##3ab982;
+  border-color: #3ab982;
   border-color: var(--accent-color);
 }
 /* 对于不支持 */

@@ -2,7 +2,6 @@ const path = require('path');
 const { globFileAll } = require('./utils');
 
 const jsonPath = path.resolve(process.cwd(), 'configJson.json');
-// eslint-disable-next-line import/no-dynamic-require
 const sidebar = require(jsonPath);
 
 const copy = require('./assembly/copy');
@@ -16,7 +15,9 @@ module.exports = {
     // 修改所有的规则，让其支持大小写
     config.module.rules.forEach((list) => {
       const item = list;
-      item.test = new RegExp(item.test, 'i');
+      const source = item.test instanceof RegExp ? item.test.source : String(item.test);
+      const flags = item.test instanceof RegExp ? item.test.flags : '';
+      item.test = new RegExp(source, flags.includes('i') ? flags : flags + 'i');
       if (item.test.source.includes('.md$')) {
         item.use.push({
           loader: 'md-imgage-error-loader',

@@ -1,6 +1,6 @@
-/* eslint-disable class-methods-use-this */
 class LocalStorage {
   set(key, value) {
+    if (typeof localStorage === 'undefined') return;
     const obj = {
       __value: value,
     };
@@ -8,13 +8,13 @@ class LocalStorage {
   }
 
   get(key) {
+    if (typeof localStorage === 'undefined') return undefined;
     const value = localStorage.getItem(key);
     if (!value) {
       return undefined;
     }
     try {
-      const k = '__value';
-      return JSON.parse(value)[k];
+      return JSON.parse(value).__value;
     } catch {
       return undefined;
     }

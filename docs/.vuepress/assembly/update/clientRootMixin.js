@@ -8,16 +8,23 @@ export default {
   },
   methods: {
     updateUpdate() {
+      if (this._updateObserverStarted) return;
+      this._updateObserverStarted = true;
       const observer = new Observer('.page-edit');
-      observer.start().then(([d]) => {
-        const dom = d;
-        const Root = Vue.extend(com);
-        const app = new Root();
-        const vm = app.$mount();
+      observer
+        .start()
+        .then(([d]) => {
+          if (!d) return;
+          const dom = d;
+          if (document.querySelector('.last-updated')) return;
+          const Root = Vue.extend(com);
+          const app = new Root();
+          const vm = app.$mount();
 
-        dom.innerHTML = '';
-        dom.appendChild(vm.$el);
-      });
+          dom.innerHTML = '';
+          dom.appendChild(vm.$el);
+        })
+        .catch(() => {});
     },
   },
 };

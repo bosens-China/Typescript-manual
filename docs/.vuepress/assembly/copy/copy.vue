@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'copy',
+  name: 'CopyCodeBtn',
   data() {
     return {
       parentDom: null,
@@ -12,10 +12,16 @@ export default {
   },
   methods: {
     onCopy() {
-      const html = this.parentDom.querySelector('pre').textContent;
-      this.$copyText(html).then(() => {
-        this.$message.success('复制成功');
-      });
+      const pre = this.parentDom.querySelector('pre');
+      if (!pre) return;
+      const html = pre.textContent;
+      this.$copyText(html)
+        .then(() => {
+          this.$message.success('复制成功');
+        })
+        .catch(() => {
+          this.$message.error('复制失败');
+        });
     },
   },
 };

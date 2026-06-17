@@ -8,19 +8,24 @@ export default {
   },
   methods: {
     updateCopy() {
+      if (this._copyObserverStarted) return;
+      this._copyObserverStarted = true;
       const observer = new Observer('div[class*="language-"]');
-      observer.start().then((e) => {
-        const domAll = e;
-        domAll.forEach((item) => {
-          if (item.querySelector('.copy-code-btn')) {
-            return;
-          }
-          const Root = Vue.extend(copy);
-          const app = new Root({ data: { parentDom: item } });
-          const vm = app.$mount();
-          item.appendChild(vm.$el);
-        });
-      });
+      observer
+        .start()
+        .then((e) => {
+          const domAll = e;
+          domAll.forEach((item) => {
+            if (item.querySelector('.copy-code-btn')) {
+              return;
+            }
+            const Root = Vue.extend(copy);
+            const app = new Root({ data: { parentDom: item } });
+            const vm = app.$mount();
+            item.appendChild(vm.$el);
+          });
+        })
+        .catch(() => {});
     },
   },
 };
