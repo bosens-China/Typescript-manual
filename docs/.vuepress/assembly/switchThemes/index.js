@@ -1,9 +1,7 @@
 const { path } = require('@vuepress/shared-utils');
 
 module.exports = {
-  enhanceAppFiles: [
-    path.resolve(__dirname, 'enhanceAppFile.js'),
-  ],
+  enhanceAppFiles: [path.resolve(__dirname, 'enhanceAppFile.js')],
   name: 'switchThemes',
   clientRootMixin: path.resolve(__dirname, 'clientRootMixin.js'),
 };

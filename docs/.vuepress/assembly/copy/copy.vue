@@ -36,7 +36,7 @@ export default {
 .copy-code-btn:hover {
   color: #8c8c8c;
 }
-div[class*="language-"]::before {
+div[class*='language-']::before {
   right: auto;
   left: 1em;
   top: 5px;

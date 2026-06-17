@@ -100,20 +100,20 @@ export default {
 };
 </script>
 
-<style >
+<style>
 :root {
   --bg-secondary: #fafafa;
   --text-accent-color-button: #232b32;
   --border-color: #eaecef;
 }
-[theme="dark"] {
+[theme='dark'] {
   --bg-secondary: #1c2228;
   --text-accent-color-button: #232b32;
   --border-color: #565656;
 }
 
 :root,
-[theme="dark"] {
+[theme='dark'] {
   --accent-color: #3ab982;
   --accent-color-darken: #2e9468;
 }

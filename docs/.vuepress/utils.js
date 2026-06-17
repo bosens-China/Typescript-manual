@@ -1,5 +1,5 @@
 // config配置文件相关
-const glob = require('glob');
+const { globSync } = require('tinyglobby');
 const path = require('path');
 
 function getLiunxPath(file) {
@@ -32,9 +32,9 @@ function globFileAll(file, mdPath) {
 
   if (!map.has(mode)) {
     if (suffix) {
-      arr = glob
-        .sync(mode, { cwd })
-        .map((item) => (path.isAbsolute(item) ? item : path.join(cwd, item)));
+      arr = globSync([mode], { cwd }).map((item) =>
+        path.isAbsolute(item) ? item : path.join(cwd, item),
+      );
     }
     map.set(mode, arr);
   } else {
