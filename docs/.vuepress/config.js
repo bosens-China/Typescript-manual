@@ -49,9 +49,9 @@ module.exports = {
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'TypeScript手册',
+      title: 'TypeScript 手册',
       description:
-        'TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript。\n  TypeScript可以在任何浏览器、任何计算机和任何操作系统上运行，并且是开源的。',
+        'TypeScript 是 JavaScript 类型的超集，它可以编译成纯 JavaScript。\n  TypeScript 可以在任何浏览器、任何计算机和任何操作系统上运行，并且是开源的。',
     },
   },
   themeConfig: {
@@ -73,11 +73,11 @@ module.exports = {
                 link: 'https://ts.xcatliu.com/introduction/hello-typescript',
               },
               {
-                text: 'TypeScript手册（英文版）',
+                text: 'TypeScript 手册（英文版）',
                 link: 'http://www.typescriptlang.org/docs/home.html',
               },
               {
-                text: 'TypeScript语言规范',
+                text: 'TypeScript 语言规范',
                 link: 'https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md',
               },
               {
@@ -87,7 +87,7 @@ module.exports = {
             ],
           },
           {
-            text: 'Github',
+            text: 'GitHub',
             link: 'https://github.com/bosens-China/Typescript-manual',
           },
           {

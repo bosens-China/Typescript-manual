@@ -5,7 +5,7 @@
     title="切换主题"
     class="vue-dark-mode btn-color-mode"
   >
-    当前主题为: <span data-cy="color-mode">{{ mode }}</span>
+    当前主题为：<span data-cy="color-mode">{{ mode }}</span>
   </button>
 </template>
 
