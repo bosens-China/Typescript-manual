@@ -40,31 +40,32 @@ export default {
     this.getThemeValue();
   },
   methods: {
+    // 绑定系统主题变更监听，重复调用是安全的
+    bindSystemThemeListener() {
+      if (!window.matchMedia || this._darkModeHandler) return;
+      const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+      this._darkModeMedia = darkMode;
+      this._darkModeHandler = (e) => {
+        this.setTheme(e.matches ? 'dark' : 'light').then(() => {
+          loc.set(key, 'default');
+        });
+      };
+      darkMode.addEventListener('change', this._darkModeHandler);
+    },
     // 获取主题的初始值，思路如下，如果系统可以使用深色模式则使用系统的设置，否则使用用户配置
     getThemeValue() {
       const value = loc.get(key);
-      if (!value) {
-        this.themeMode = 'default';
-      } else {
-        this.themeMode = value;
-      }
+      this.themeMode = value || 'default';
       if (this.themeMode === 'default' && !window.matchMedia) {
         this.setTheme('light');
         return;
       }
-      if (this.themeMode === 'default' && window.matchMedia) {
+      if (this.themeMode === 'default') {
         const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
         this.setTheme(darkMode.matches ? 'dark' : 'light').then(() => {
           loc.set(key, 'default');
         });
-        // 监听主题切换事件
-        this._darkModeMedia = darkMode;
-        this._darkModeHandler = (e) => {
-          this.setTheme(e.matches ? 'dark' : 'light').then(() => {
-            loc.set(key, 'default');
-          });
-        };
-        darkMode.addEventListener('change', this._darkModeHandler);
+        this.bindSystemThemeListener();
         return;
       }
       this.setTheme();
@@ -94,6 +95,7 @@ export default {
         this.setTheme(defaultKey()).then(() => {
           loc.set(key, 'default');
         });
+        this.bindSystemThemeListener();
         return;
       }
       this.setTheme();
